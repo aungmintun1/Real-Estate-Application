@@ -26,6 +26,11 @@
 
 
 @import url(https://fonts.googleapis.com/css?family=Nunito:400,400i,600,700&display=swap);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Table of contents */
 
 
@@ -3313,14 +3318,14 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   padding: 0;
 }
 .home-seven{
-  background-image: url(/public/images/background/10.jpg);
+  background-image: url('../../public/images/background/10.jpg');
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center center;
   height: 800px;
 }
 .home-nine{
-  background-image: url(/public/images/background/12.jpg);
+  background-image: url('../../public//images/background/12.jpg');
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center center;
@@ -3502,7 +3507,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   top: 0;
 }
 .home1_bgi1{
-  background-image: url(/public/images/background/1.jpg);
+  background-image: url('../../public/images/background/re-home.jpg');
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center center;
@@ -3523,7 +3528,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   width: 100%;
 }
 .home5_bgi5{
-  background-image: url(/public/images/background/5.jpg);
+  background-image: url('../../public/images/background/5.jpg');
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center center;
@@ -3548,7 +3553,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   height: 860px;
 }
 .home6-overlay:before {
-  background-image: url(/public/images/background/7.jpg);
+  background-image: url('../../public/images/background/7.jpg');
   bottom: 0;
   content: "";
   opacity: 0.7;
@@ -3573,7 +3578,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   width: 100%;
 }
 .listing-home-bg{
-  background-image: url(/public/images/background/13.jpg);
+  background-image: url('../../public/images/background/13.jpg');
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center center;
@@ -3658,7 +3663,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   line-height: 40px;
 }
 .home1-divider2 {
-  background-image: url(/public/images/background/3.jpg);
+  background-image: url('../../public/images/background/3.jpg');
   -webkit-background-size: cover;
   background-position: center center;
   background-size: cover;
@@ -6017,7 +6022,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   background-color: #1d293e;
 }
 .our-testimonial:before{
-  background-image: url(/public/images/background/2.jpg);
+  background-image: url('../../public/images/background/2.jpg');
   bottom: 0;
   content: "";
   left: 0;
@@ -6030,7 +6035,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   background-color: #232733;
 }
 .our-testimonial.home5:before{
-  background-image: url(/public/images/background/6.jpg);
+  background-image: url('../../public/images/background/6.jpg');
   bottom: 0;
   content: "";
   left: 0;
@@ -6044,7 +6049,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   height: 365px;
 }
 .you-looking-for:before{
-  background-image: url("../images/background/8.jpg");
+  background-image: url("../../public/images/background/8.jpg");
   bottom: 0;
   content: "";
   left: 0;
@@ -6058,7 +6063,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   height: 549px;
 }
 .modern-apertment:before{
-  background-image: url("../images/background/9.jpg");
+  background-image: url("../../public/images/background/9.jpg");
   bottom: 0;
   content: "";
   left: 0;
@@ -6068,7 +6073,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   top: 0;
 }
 .our-hot-offer{
-  background-image: url("../images/background/11.jpg");
+  background-image: url("../../public/images/background/11.jpg");
   height: 581px;
 }
 .our-hot-offer:before{
@@ -7378,7 +7383,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
 }
 /*== Inner Pages Breadcrumb ==*/
 .inner_page_breadcrumb {
-  background-image: url(../images/background/inner-pagebg.jpg);
+  background-image: url('../../public/images/background/inner-pagebg.jpg');
   background-repeat: no-repeat;
   height: 410px;
   position: relative;
@@ -14534,11 +14539,11 @@ a.btn.btn_error{
 }
 /*== BackGround Images ==*/
 .bg-img2 {
-  background-image: url("../images/background/2.jpg");
+  background-image: url("../../public/images/background/2.jpg");
 }
 .bg-img3 {
   background-attachment: scroll;
-  background-image: url("../images/background/3.jpg");
+  background-image: url("../../public/images/background/3.jpg");
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 8px;
@@ -14546,7 +14551,7 @@ a.btn.btn_error{
 }
 .bg-img4 {
   background-attachment: scroll;
-  background-image: url("../images/background/4.jpg");
+  background-image: url("../../public/images/background/4.jpg");
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 8px;
@@ -14554,21 +14559,21 @@ a.btn.btn_error{
 }
 .bg-img5 {
   background-attachment: scroll;
-  background-image: url("../images/background/5.jpg");
+  background-image: url("../../public/images/background/5.jpg");
   background-position: center;
   background-repeat: no-repeat;
   height: 650px;
 }
 .bg-img6 {
   background-attachment: scroll;
-  background-image: url("../images/background/8.jpg");
+  background-image: url("../../public/images/background/8.jpg");
   background-position: center;
   background-repeat: no-repeat;
   height: 960px;
 }
 .bg-ptrn1 {
   background-attachment: scroll;
-  background-image: url("../images/pattern/1.png");
+  background-image: url("../../public/images/pattern/1.png");
   background-position: center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -14576,7 +14581,7 @@ a.btn.btn_error{
 }
 .bg-ptrn2 {
   background-attachment: scroll;
-  background-image: url("../images/pattern/2.png");
+  background-image: url("../../public/images/pattern/2.png");
   background-position: center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -14954,7 +14959,7 @@ a.scrollToHome.home8{
   background-color: rgb(29, 41, 62);
 }
 .divider_home1:before{
-  background-image: url("../images/background/2.jpg");
+  background-image: url("public/images/background/2.jpg");
   content: "";
   height: 100%;
   left: 0;
@@ -15005,7 +15010,7 @@ a.scrollToHome.home8{
   padding-top: 135px;
 }
 .divider2:before{
-  background-image: url(../images/background/2.png);
+  background-image: url(public/images/background/2.png);
   background-repeat: no-repeat;
   bottom: 0;
   content: "";
@@ -15955,17 +15960,17 @@ canvas {
   width: 90px;
 }
 .single_product_slider.owl-theme .owl-dots .owl-dot:first-child span{
-  background-image: url(../images/shop/ss1.png);
+  background-image: url(public/images/shop/ss1.png);
   background-position: center center;
   background-size: cover;
 }
 .single_product_slider.owl-theme .owl-dots .owl-dot:nth-child(2) span{
-  background-image: url(../images/shop/ss2.png);
+  background-image: url(public/images/shop/ss2.png);
   background-position: center center;
   background-size: cover;
 }
 .single_product_slider.owl-theme .owl-dots .owl-dot:nth-child(3) span{
-  background-image: url(../images/shop/ss3.png);
+  background-image: url(public/images/shop/ss3.png);
   background-position: center center;
   background-size: cover;
 }
