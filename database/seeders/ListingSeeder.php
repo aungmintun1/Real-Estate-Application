@@ -16,17 +16,21 @@ class ListingSeeder extends Seeder
     public function run(): void
     {
         DB::table('listings')->insert([
-            [
+            [   'title' => 'Beautiful 2 Story House',
                 'address' => '123 Main St',
-                'address2' => 'Apt 4',
                 'city' => 'Anytown',
                 'state' => 'CA',
+                'type' => 'House',
                 'zipcode' => 90210,
                 'bedrooms' => '3',
                 'bathrooms' => '2',
                 'squarefootage' => '1200',
                 'description' => 'A lovely three-bedroom house with a spacious backyard.',
                 'slug' => Str::slug('123 Main St Apt 4 Anytown CA'),
+                'price' => 13000,
+                'status' => 'published',
+                'user_id' => 1,
+                'features' => json_encode(['Air Conditioning', 'Dryer', 'Gym']),  
                 'updated_at' => Carbon::now(), 
                 'created_at' => Carbon::now()
             ],

@@ -9,7 +9,11 @@ class Listing extends Model
 {
     use HasFactory;
 
-    public function user(){
+    protected $casts = [
+        'features' => 'array'
+    ];
+
+    public function user() {
         return $this->belongsTo(User::class);
     }
 }

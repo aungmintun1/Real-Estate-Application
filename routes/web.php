@@ -19,6 +19,8 @@ Route::get('/users/register', function () {
 
 //listings
 Route::get('/listings', [ListingController::class, 'index']);
+Route::get('/listings/create', [ListingController::class, 'create']);
+Route::post('/listings', [ListingController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

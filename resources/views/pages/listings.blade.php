@@ -357,24 +357,25 @@
                     <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
                     <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
                 </ul>
-                <a class="fp_price" href="#">$13,000<small>/mo</small></a>
+                <a class="fp_price" href="#">${{$listing->price}}<small>/mo</small></a>
             </div>
         </div>
         <div class="details">
             <div class="tc_content">
-                <p class="text-thm">Apartment</p>
-                <h4>Renovated Apartment</h4>
+                <p class="text-thm">{{$listing->type}}</p>
+                <h4> {{$listing->title}}</h4>
                 <p><span class="flaticon-placeholder"></span> {{$listing->address}}</p>
                 <ul class="prop_details mb0">
                     <li class="list-inline-item"><a class="text-thm3" href="#">Beds: {{$listing->bedrooms}}</a></li>
                     <li class="list-inline-item"><a class="text-thm3" href="#">Bathrooms: {{$listing->bathrooms}}</a></li>
                     <li class="list-inline-item"><a class="text-thm3" href="#">Sq Ft: {{$listing->squarefootage}}</a></li>
+					<p>Features: @foreach ($listing->features as $feature) {{$feature}},			@endforeach</p>
                 </ul>
             </div>
             <div class="fp_footer">
                 <ul class="fp_meta float-left mb0">
                     <li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-                    <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+                    <li class="list-inline-item"><a href="#">{{$listing->user->name}}</a></li>
                 </ul>
                 <div class="fp_pdate float-right">{{$listing->created_at->diffForHumans()}}</div>
             </div>
