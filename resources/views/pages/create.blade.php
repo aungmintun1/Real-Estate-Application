@@ -323,9 +323,9 @@
 										<div class="resume_uploader mb30">
 											<h4>Attachments</h4>
 											<form class="form-inline">
-												<input class="upload-path">
+												
 												<label class="upload">
-												    <input type="file">
+												    <input type="file" name="images[]" accept=".png, .jpg, .jpeg" multiple>
 												    Select Attachment
 												</label>
 											</form>

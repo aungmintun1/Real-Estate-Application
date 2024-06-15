@@ -339,12 +339,17 @@
     <div class="feat_property home7 style4">
         <div class="thumb">
             <div class="fp_single_item_slider">
-                <div class="item">
-                    <img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
+				@php
+				$sortedImages = $listing->images->sortByDesc('thumbnail_image'); //'yes' is considered higher than 'no'
+				@endphp
+				@foreach ($sortedImages as $image)
+
+				<div class="item">
+                    <img class="img-whp" src="uploads/{{$image->image}}" alt="listing images">
                 </div>
-                <div class="item">
-                    <img class="img-whp" src="images/property/fp2.jpg" alt="fp2.jpg">
-                </div>
+					
+				@endforeach
+            
             </div>
             <div class="thmb_cntnt style2">
                 <ul class="tag mb0">
