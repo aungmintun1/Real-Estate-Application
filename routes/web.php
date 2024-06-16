@@ -2,12 +2,12 @@
 
 use App\Http\Controllers\Admin\ListingController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StaticPagesController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
-
+//static pages
+Route::get('/' , [StaticPagesController::class, 'home']);
+Route::get('/listings/all' , [StaticPagesController::class, 'ListingAll']);
 
 //login and register
 Route::get('/users/login', function () {
@@ -21,6 +21,11 @@ Route::get('/users/register', function () {
 Route::get('/listings', [ListingController::class, 'index']);
 Route::get('/listings/create', [ListingController::class, 'create']);
 Route::post('/listings', [ListingController::class, 'store']);
+Route::get('/listings/{id}', [ListingController::class, 'show']);
+Route::get('/listings/{id}/edit', [ListingController::class, 'edit']);
+Route::put('/listings/{id}', [ListingController::class, 'update']);
+Route::delete('/listings/{id}', [ListingController::class, 'destroy']);
+Route::delete('/listings/{id}', [ListingController::class, 'destroyImage']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

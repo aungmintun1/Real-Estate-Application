@@ -31,7 +31,7 @@
 								<p class="text-center">Don't have an account? <a class="text-thm" href="page-register.html">Sign Up!</a></p>
 							</div>
 							 <div class="form-group">
-						    	<input name="email" type="email" class="form-control" id="exampleInputEmail3" placeholder="Email Address" value="john@gmail.com">
+						    	<input name="email" type="email" class="form-control" id="exampleInputEmail3" placeholder="Email Address" value="aung@gmail.com">
 							</div>
 							<div class="form-group">
 						    	<input name="password" type="password" class="form-control" id="exampleInputPassword4" placeholder="Password" value="password">

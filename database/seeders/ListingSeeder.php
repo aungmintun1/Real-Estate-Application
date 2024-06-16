@@ -28,7 +28,7 @@ class ListingSeeder extends Seeder
                 'description' => 'A lovely three-bedroom house with a spacious backyard.',
                 'slug' => Str::slug('123 Main St Apt 4 Anytown CA'),
                 'price' => 13000,
-                'status' => 'published',
+                'status' => 'Published',
                 'user_id' => 1,
                 'features' => json_encode(['Air Conditioning', 'Dryer', 'Gym']),  
                 'updated_at' => Carbon::now(), 
