@@ -190,6 +190,75 @@ class ListingController extends Controller
         return redirect('/listings/' . $listing_id . '/edit');
     
     }
+
+    public function search(Request $request)
+    {
+        // Validate the inputs
+        $request->validate([
+            'title' => 'nullable|string|max:255',
+            'address' => 'nullable|string|max:255',
+            'type' => 'nullable|string|max:255',
+            'min_price' => 'nullable|numeric|min:0',
+            'max_price' => 'nullable|numeric|min:0',
+            'bathrooms' => 'nullable|integer|min:0',
+            'bedrooms' => 'nullable|integer|min:0',
+            'min_area' => 'nullable|string|min:0',
+            'max_area' => 'nullable|string|min:0',
+        ]);
+
+        // Start with the base query
+        $query = Listing::query();
+
+        // Apply filters based on the request inputs
+        if ($request->filled('title')) {
+            $query->where('title', 'LIKE', '%' . $request->input('title') . '%');
+        }
+
+        if ($request->filled('address')) {
+            $query->where('address', 'LIKE', '%' . $request->input('address') . '%');
+        }
+
+        if ($request->filled('status')) {
+            $query->where('status', $request->input('status'));
+        }
+
+        if ($request->filled('type')) {
+            $query->where('type', $request->input('type'));
+        }
+
+        if ($request->filled('min_price') && $request->filled('max_price')) {
+            $query->whereBetween('price', [$request->input('min_price'), $request->input('max_price')]);
+        } elseif ($request->filled('min_price')) {
+            $query->where('price', '>=', $request->input('min_price'));
+        } elseif ($request->filled('max_price')) {
+            $query->where('price', '<=', $request->input('max_price'));
+        }
+
+        if ($request->filled('bathrooms')) {
+            $query->where('bathrooms', '>=', $request->input('bathrooms'));
+        }
+
+        if ($request->filled('bedrooms')) {
+            $query->where('bedrooms', '>=', $request->input('bedrooms'));
+        }
+
+        if ($request->filled('min_area') && $request->filled('max_area')) {
+            $query->whereBetween('squarefootage', [$request->input('min_area'), $request->input('max_area')]);
+        } elseif ($request->filled('min_area')) {
+            $query->where('squarefootage', '>=', $request->input('min_area'));
+        } elseif ($request->filled('max_area')) {
+            $query->where('squarefootage', '<=', $request->input('max_area'));
+        }
+
+        // Execute the query and get the results
+        $realEstateListings = $query->orderBy('price', 'asc')->get();
+
+        // Return the search results view with the real estate listings
+        return view('/pages/results',[
+            'listings'=>$realEstateListings,
+        ]);
+    }
+
     
 }
 

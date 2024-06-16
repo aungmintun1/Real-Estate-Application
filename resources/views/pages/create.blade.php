@@ -173,7 +173,7 @@
 									<div class="col-lg-6 col-xl-4">
 										<div class="my_profile_setting_input form-group">
 									    	<label for="Area">Area</label>
-									    	<input name="squarefootage" type="text" class="form-control" id="bathRooms" value="81200">
+									    	<input name="squarefootage" type="number" class="form-control" id="area" value="81200">
 										</div>
 									</div>
 								

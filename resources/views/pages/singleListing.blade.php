@@ -8,7 +8,10 @@
 					<div class="row m0">
 						<div class="col-lg-12 p0">
 							<div class="spls_style_one pr1 1px">
-								<img class="img-fluid w100" src="/uploads/{{$listing->images[0]->image}}" alt="ls1.jpg">
+						
+								<a class="popup-img" href="{{ isset($listing->images[0]) ? '/uploads/' . $listing->images[0]->image : 'images/property/ls1.jpg' }}">
+									<img class="img-fluid w100" src="/uploads/{{$listing->images[0]->image}}" alt="ls1.jpg">
+                                </a>
 							</div>
 						</div>
 					</div>
@@ -46,19 +49,23 @@
                                 </a>
                             </div>
                         </div>
-                        
-				
+	
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+  
 	<section class="p0">
 		<div class="container">
 			<div class="row listing_single_row">
 				<div class="col-sm-6 col-lg-7 col-xl-8">
 					<div class="single_property_title">
-						<a href="/uploads/{{$listing->images[0]->image}}" class="upload_btn popup-img"><span class="flaticon-photo-camera"></span> View Photos</a>
+						<button type="button" class="btn view-photos-btn" data-toggle="modal" data-target="#imageModal">
+							<span class="flaticon-photo-camera"></span> View Photos
+						</button>
+				
+
 					</div>
 				</div>
 				<div class="col-sm-6 col-lg-5 col-xl-4">
@@ -76,6 +83,52 @@
 			</div>
 		</div>
 	</section>
+
+
+	
+	<div class="modal" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+				
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					
+						<div class="carousel-inner">
+			
+							<div class="carousel-item active">
+								<img src="/uploads/{{$listing->images[0]->image}}"  class="d-block w-100" alt="First slide">
+							</div>
+							@foreach ($listing->images->skip(1) as $image)
+
+							<div class="carousel-item">
+								<img src="/uploads/{{$image->image}}"  class="d-block w-100" alt=" slide">
+							</div>
+								
+							@endforeach
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div> 
+				</div> 
+			</div>
+		</div>
+	</div>
+
+
+
+  
+	  
 
 	<!-- Agent Single Grid View -->
 	<section class="our-agent-single bgc-f7 pb30-991">

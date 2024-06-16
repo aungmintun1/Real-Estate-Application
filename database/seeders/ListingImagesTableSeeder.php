@@ -13,28 +13,35 @@ class ListingImagesTableSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('listing_images')->insert([
-            [   'image' => 'home1.jpg',
-                'listing_id'=> 1,
-                'updated_at' => Carbon::now(), 
-                'created_at' => Carbon::now()
-            ],
-        ]);
+            for ($i = 1; $i <= 11; $i++) {
+            DB::table('listing_images')->insert([
+                [
+                    'image' => 'home1.jpg',
+                    'listing_id' => $i,
+                    'updated_at' => Carbon::now(),
+                    'created_at' => Carbon::now()
+                ],
+            ]);
+        
+            DB::table('listing_images')->insert([
+                [
+                    'image' => 'home2.jpg',
+                    'listing_id' => $i,
+                    'updated_at' => Carbon::now(),
+                    'created_at' => Carbon::now()
+                ],
+            ]);
+        
+            DB::table('listing_images')->insert([
+                [
+                    'image' => 'home3.jpg',
+                    'listing_id' => $i,
+                    'updated_at' => Carbon::now(),
+                    'created_at' => Carbon::now()
+                ],
+            ]);
+        }
 
-        DB::table('listing_images')->insert([
-            [   'image' => 'home2.jpg',
-                'listing_id'=> 1,
-                'updated_at' => Carbon::now(), 
-                'created_at' => Carbon::now()
-            ],
-        ]);
-
-        DB::table('listing_images')->insert([
-            [   'image' => 'home3.jpg',
-                'listing_id'=> 1,
-                'updated_at' => Carbon::now(), 
-                'created_at' => Carbon::now()
-            ],
-        ]);
+        
     }
 }

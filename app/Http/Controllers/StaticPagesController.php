@@ -22,4 +22,17 @@ class StaticPagesController extends Controller
             'listings'=>$listings,
         ]);
     }
+
+    public function search()
+    {  
+        return view('pages/search');
+    }
+
+    public function results()
+    {  
+        $listings = Listing::all();
+        return view('pages/results' ,[
+            'listings'=>$listings
+        ]);
+    }
 }
