@@ -187,7 +187,19 @@
 		            <li class="last">
 		                <a href="page-contact.html"><span class="title">Contact</span></a>
 		            </li>
-	                <li class="list-inline-item list_s"><a href="#" class="btn flaticon-user" data-toggle="modal" data-target=".bd-example-modal-lg"> <span class="dn-lg">Login/Register</span></a></li>
+					@if (Route::has('login'))
+					@auth
+					<li class="list-inline-item">
+					 <form method="POST" action="{{ route('logout') }}">
+						@csrf
+						<a href="/logout" class="btn flaticon-user" onclick="event.preventDefault(); this.closest('form').submit();" type="button"><span class="dn-lg">  Logout</span></a>
+					 </form>
+					</li>
+					@else
+					<li class="list-inline-item list_s"><a href="#" class="btn flaticon-user" data-toggle="modal" data-target=".bd-example-modal-lg"> <span class="dn-lg">Login/Register</span></a></li>
+					@endauth
+					@endif
+	                {{-- <li class="list-inline-item list_s"><a href="#" class="btn flaticon-user" data-toggle="modal" data-target=".bd-example-modal-lg"> <span class="dn-lg">Login/Register</span></a></li> --}}
 	                <li class="list-inline-item add_listing"><a href="page-add-new-property.html"><span class="flaticon-plus"></span><span class="dn-lg"> Create Listing</span></a></li>
 		        </ul>
 		    </nav>
@@ -217,12 +229,13 @@
 					  	<div class="row mt25 tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 					  		<div class="col-lg-6 col-xl-6">
 					  			<div class="login_thumb">
-					  				<img class="img-fluid w100" src="/images/resource/login.jpg" alt="login.jpg">
+					  				<img class="img-fluid w100" src="/images/home/login.jpg" alt="login.jpg">
 					  			</div>
 					  		</div>
 					  		<div class="col-lg-6 col-xl-6">
 								<div class="login_form">
-									<form action="#">
+									<form method="POST" action="{{ route('login') }}">
+										@csrf
 										<div class="heading">
 											<h4>Login</h4>
 										</div>
@@ -236,13 +249,13 @@
 										</div>
 										<hr>
 										<div class="input-group mb-2 mr-sm-2">
-										    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="User Name Or Email">
+										    <input name="email" type="email" class="form-control" id="inlineFormInputGroupUsername2" placeholder="User Name Or Email" value="aung@gmail.com">
 										    <div class="input-group-prepend">
 										    	<div class="input-group-text"><i class="flaticon-user"></i></div>
 										    </div>
 										</div>
 										<div class="input-group form-group">
-									    	<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+									    	<input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" value="password">
 										    <div class="input-group-prepend">
 										    	<div class="input-group-text"><i class="flaticon-password"></i></div>
 										    </div>
@@ -261,7 +274,7 @@
 					  	<div class="row mt25 tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 					  		<div class="col-lg-6 col-xl-6">
 					  			<div class="regstr_thumb">
-					  				<img class="img-fluid w100" src="/images/resource/regstr.jpg" alt="regstr.jpg">
+					  				<img class="img-fluid w100" src="/images/home/regstr.jpg" alt="regstr.jpg">
 					  			</div>
 					  		</div>
 					  		<div class="col-lg-6 col-xl-6">
@@ -269,7 +282,8 @@
 									<div class="heading">
 										<h4>Register</h4>
 									</div>
-									<form action="#">
+									<form method="POST" action="{{ route('register') }}">
+										@csrf
 										<div class="row">
 											<div class="col-lg-12">
 												<button type="submit" class="btn btn-block btn-fb"><i class="fa fa-facebook float-left mt5"></i> Login with Facebook</button>
@@ -280,25 +294,25 @@
 										</div>
 										<hr>
 										<div class="form-group input-group">
-										    <input type="text" class="form-control" id="exampleInputName" placeholder="User Name">
+										    <input name="name" type="name" class="form-control" id="exampleInputName" placeholder="User Name" value="matt">
 										    <div class="input-group-prepend">
 										    	<div class="input-group-text"><i class="flaticon-user"></i></div>
 										    </div>
 										</div>
 										<div class="form-group input-group">
-										    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email">
+										    <input name="email" type="email" class="form-control" id="exampleInputEmail2" placeholder="Email" value="matt@gmail.com">
 										    <div class="input-group-prepend">
 										    	<div class="input-group-text"><i class="fa fa-envelope-o"></i></div>
 										    </div>
 										</div>
 										<div class="form-group input-group">
-										    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+										    <input name="password" type="password"  class="form-control" id="exampleInputPassword2" placeholder="Password" value="password">
 										    <div class="input-group-prepend">
 										    	<div class="input-group-text"><i class="flaticon-password"></i></div>
 										    </div>
 										</div>
 										<div class="form-group input-group">
-										    <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Re-enter password">
+										    <input name="password_confirmation" type="password" class="form-control" id="exampleInputPassword3" placeholder="Re-enter password" value="password">
 										    <div class="input-group-prepend">
 										    	<div class="input-group-text"><i class="flaticon-password"></i></div>
 										    </div>

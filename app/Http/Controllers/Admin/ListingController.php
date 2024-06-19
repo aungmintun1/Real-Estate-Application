@@ -11,11 +11,20 @@ class ListingController extends Controller
 {
     public function index()
     {  
-        $user= Auth::user();
 
-        $listings = Listing::where('user_id', $user->id)->get();
-        // $listing = Listing::find(1);
-        // return response()->json($listing->images);
+        $user= Auth::user();
+   
+        if($user->roles[0]->title == 'Admin'){
+            $listings= Listing::all();
+        }
+
+        if($user->roles[0]->title == 'Agent'){
+            $listings = Listing::where('user_id', $user->id)->get();
+        }
+
+        if($user->roles[0]->title == 'User'){
+           return redirect('listings/all');
+        }
 
         return view('pages/myListings',[
             'listings'=>$listings,

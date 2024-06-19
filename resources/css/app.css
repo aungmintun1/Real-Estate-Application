@@ -16541,26 +16541,30 @@ button.gm-ui-hover-effect:focus {
 [disabled].noUi-origin,[disabled] .noUi-handle {
   cursor: not-allowed;
 }
-.modal {
+.image-modal {
   padding: 0 !important;
 }
-.modal-backdrop {
+/* .modal-backdrop {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) !important;
-}
-.modal-dialog {
+} */
+ .black-gradient{
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) !important;
+ }
+.image-modal-dialog {
   max-width: 100%;
   margin: 0;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) !important;
+  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) !important; */
 }
-.modal-content {
+.image-modal-content {
   width: 1200px;
-  height: 1000px;
   border: none;
   border-radius: 0;
+}
+.transparent{
   background: transparent;
 }
 .carousel-item img {

@@ -50,7 +50,7 @@ class ListingSeeder extends Seeder
             'slug' => Str::slug('456 Elm St Apt 12 Anytown CA'),
             'price' => 2500,
             'status' => 'Published',
-            'user_id' => 1,
+            'user_id' => 2,
             'features' => json_encode(['Air Conditioning', 'TV Cable', 'Refrigerator']),
             'updated_at' => Carbon::now(),
             'created_at' => Carbon::now()
@@ -70,7 +70,7 @@ class ListingSeeder extends Seeder
             'slug' => Str::slug('789 Pine St Anytown CA'),
             'price' => 3500,
             'status' => 'Published',
-            'user_id' => 1,
+            'user_id' => 2,
             'features' => json_encode(['Lawn', 'Outdoor Shower', 'Microwave']),
             'updated_at' => Carbon::now(),
             'created_at' => Carbon::now()

@@ -371,7 +371,19 @@
 	   		<li class="title"><span>Manage Account</span></li>
 		    <li><a href="page-my-packages.html"><i class="flaticon-box"></i> <span>My Package</span></a></li>
 		    <li><a href="page-my-profile.html"><i class="flaticon-user"></i> <span>My Profile</span></a></li>
-		    <li><a href="page-login.html"><i class="flaticon-logout"></i> <span>Logout</span></a></li>
+			@if (Route::has('login'))
+			@auth
+			<form method="POST" action="{{ route('logout') }}">
+				@csrf
+				<li><a href="/logout" onclick="event.preventDefault(); this.closest('form').submit();" type="button"><i class="flaticon-logout"></i> <span>Logout</span></a></li>
+			</form>
+	  
+			@else
+			<li>
+				<li><a href="/users/login"><i class="flaticon-logout"></i> <span>Login</span></a></li>
+			</li>
+			@endauth
+			@endif
 	    </ul>
     </div>
 
