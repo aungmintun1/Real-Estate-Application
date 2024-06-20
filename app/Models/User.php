@@ -52,4 +52,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Listing::class);
     }
+
+    public function savedListings()
+    {
+        return $this->belongsToMany(Listing::class, 'listing_user', 'user_id', 'listing_id')->withTimestamps();
+    }
 }

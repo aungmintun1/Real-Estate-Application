@@ -77,4 +77,16 @@ class UserController extends Controller
         return view('pages.error');
     
     }
+
+    public function favorites()
+    {
+        $user = Auth::user();
+        // return response()->json($user->savedListings);
+        $favorites=$user->savedListings;
+        
+        return view('pages.favorites',[
+            'favorites'=>$favorites,
+        ]);
+    
+    }
 }

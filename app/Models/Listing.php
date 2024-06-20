@@ -21,4 +21,9 @@ class Listing extends Model
     {
         return $this->hasMany(ListingImage::class);
     }
+
+    public function savedByUsers()
+    {
+        return $this->belongsToMany(User::class, 'listing_user', 'listing_id', 'user_id')->withTimestamps();
+    }
 }

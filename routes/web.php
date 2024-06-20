@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ListingController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SavedListingController;
 use App\Http\Controllers\StaticPagesController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,7 @@ Route::get('/about' , [StaticPagesController::class, 'about']);
 Route::get('/users/login' , [UserController::class, 'login']);
 Route::get('/users/register' , [UserController::class, 'register']);
 Route::get('/users/dashboard' , [UserController::class, 'dashboard']);
+Route::get('/users/favorites' , [UserController::class, 'favorites']);
 Route::get('/users/all' , [UserController::class, 'all'])->middleware('role:Admin');
 Route::get('/users/{id}/edit' , [UserController::class, 'edit']);
 Route::put('/users/{id}' , [UserController::class, 'update']);
@@ -35,6 +37,8 @@ Route::put('/listings/{id}', [ListingController::class, 'update']);
 Route::delete('/listings/{id}', [ListingController::class, 'destroy']);
 Route::delete('/listings/{id}', [ListingController::class, 'destroyImage']);
 
+//favorites
+Route::delete('/favorites/{id}', [SavedListingController::class, 'destroy']);
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
