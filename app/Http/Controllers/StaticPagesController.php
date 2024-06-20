@@ -28,6 +28,16 @@ class StaticPagesController extends Controller
         return view('pages/search');
     }
 
+    public function contact()
+    {  
+        return view('pages/contact');
+    }
+
+    public function about()
+    {  
+        return view('pages/about');
+    }
+
     public function results()
     {  
         $listings = Listing::all();

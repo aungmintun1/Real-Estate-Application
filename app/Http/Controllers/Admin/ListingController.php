@@ -111,9 +111,20 @@ class ListingController extends Controller
     public function edit($id){
 
         $listing = Listing::find($id);
+        $authUser = Auth::user();
 
+        if($authUser->roles[0]->title=='Admin' || $listing->user_id==$authUser->id){
+            
+            return view('pages/edit',[
+                'listing'=>$listing
+            ]);
+        }
+
+        else{
+            return redirect('/users/error');
+        }
         
-        return view('pages/edit',['listing'=>$listing]);
+
 
     }
 

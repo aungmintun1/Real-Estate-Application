@@ -24,7 +24,7 @@ class RoleSeeder extends Seeder
             'title' => 'User',
         ]);
 
-             //assigned user a role
+        //assigned user a role
         DB::table('role_user')->insert([
                 'role_id' => 1,
                 'user_id' => 1,
@@ -36,5 +36,9 @@ class RoleSeeder extends Seeder
                 'role_id' => 2,
                 'user_id' => 2,
         ]);
+        DB::table('role_user')->insert([
+            'role_id' => 3,
+            'user_id' => 3,
+    ]);
     }
 }

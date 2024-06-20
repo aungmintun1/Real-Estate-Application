@@ -2,7 +2,7 @@
 
  @section('content')
 	<!-- Inner Page Breadcrumb -->
-	<section class="inner_page_breadcrumb">
+	<section class="inner_page_breadcrumb contact-bg">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-6">
