@@ -35,9 +35,10 @@ Route::get('/listings/{id}', [ListingController::class, 'show']);
 Route::get('/listings/{id}/edit', [ListingController::class, 'edit']);
 Route::put('/listings/{id}', [ListingController::class, 'update']);
 Route::delete('/listings/{id}', [ListingController::class, 'destroy']);
-Route::delete('/listings/{id}', [ListingController::class, 'destroyImage']);
+Route::delete('/listings/image/{id}', [ListingController::class, 'destroyImage']);
 
 //favorites
+Route::post('/favorites/{id}', [SavedListingController::class, 'store']);
 Route::delete('/favorites/{id}', [SavedListingController::class, 'destroy']);
 
 // Route::get('/dashboard', function () {

@@ -37,6 +37,91 @@ class ListingSeeder extends Seeder
         ]);
 
         DB::table('listings')->insert([
+            [   'title' => 'New York House',
+                'address' => '123 Main St',
+                'city' => 'Anytown',
+                'state' => 'CA',
+                'type' => 'House',
+                'zipcode' => 90210,
+                'bedrooms' => '3',
+                'bathrooms' => '2',
+                'squarefootage' => 1200,
+                'description' => 'A lovely three-bedroom house with a spacious backyard.',
+                'slug' => Str::slug('123 Main St Apt 4 Anytown CA'),
+                'price' => 13000,
+                'status' => 'Published',
+                'user_id' => 1,
+                'features' => json_encode(['Air Conditioning', 'Dryer', 'Gym']),  
+                'updated_at' => Carbon::now(), 
+                'created_at' => Carbon::now()
+            ],
+        ]);
+
+        
+        DB::table('listings')->insert([
+            [   'title' => 'New Jersey House',
+                'address' => '123 Main St',
+                'city' => 'Anytown',
+                'state' => 'CA',
+                'type' => 'House',
+                'zipcode' => 90210,
+                'bedrooms' => '3',
+                'bathrooms' => '2',
+                'squarefootage' => 1200,
+                'description' => 'A lovely three-bedroom house with a spacious backyard.',
+                'slug' => Str::slug('123 Main St Apt 4 Anytown CA'),
+                'price' => 13000,
+                'status' => 'Published',
+                'user_id' => 1,
+                'features' => json_encode(['Air Conditioning', 'Dryer', 'Gym']),  
+                'updated_at' => Carbon::now(), 
+                'created_at' => Carbon::now()
+            ],
+        ]);
+
+                
+        DB::table('listings')->insert([
+            [   'title' => 'Blue House',
+                'address' => '123 Main St',
+                'city' => 'Anytown',
+                'state' => 'CA',
+                'type' => 'House',
+                'zipcode' => 90210,
+                'bedrooms' => '3',
+                'bathrooms' => '2',
+                'squarefootage' => 1200,
+                'description' => 'A lovely three-bedroom house with a spacious backyard.',
+                'slug' => Str::slug('123 Main St Apt 4 Anytown CA'),
+                'price' => 13000,
+                'status' => 'Published',
+                'user_id' => 1,
+                'features' => json_encode(['Air Conditioning', 'Dryer', 'Gym']),  
+                'updated_at' => Carbon::now(), 
+                'created_at' => Carbon::now()
+            ],
+        ]);
+        DB::table('listings')->insert([
+            [   'title' => 'Grey House',
+                'address' => '123 Main St',
+                'city' => 'Anytown',
+                'state' => 'CA',
+                'type' => 'House',
+                'zipcode' => 90210,
+                'bedrooms' => '3',
+                'bathrooms' => '2',
+                'squarefootage' => 1200,
+                'description' => 'A lovely three-bedroom house with a spacious backyard.',
+                'slug' => Str::slug('123 Main St Apt 4 Anytown CA'),
+                'price' => 13000,
+                'status' => 'Published',
+                'user_id' => 1,
+                'features' => json_encode(['Air Conditioning', 'Dryer', 'Gym']),  
+                'updated_at' => Carbon::now(), 
+                'created_at' => Carbon::now()
+            ],
+        ]);
+
+        DB::table('listings')->insert([
             'title' => 'Luxury Apartment with City View',
             'address' => '456 Elm St Apt 12',
             'city' => 'Anytown',
@@ -232,6 +317,206 @@ class ListingSeeder extends Seeder
             'status' => 'Published',
             'user_id' => 1,
             'features' => json_encode(['Private Elevator', 'Terrace', 'Jacuzzi']),
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+
+        DB::table('listings')->insert([
+            'title' => 'Charming Bungalow with Private Garden',
+            'address' => '100 Maple St',
+            'city' => 'Greentown',
+            'state' => 'OH',
+            'type' => 'Bungalow',
+            'zipcode' => 44701,
+            'bedrooms' => '3',
+            'bathrooms' => '2',
+            'squarefootage' => 1800,
+            'description' => 'A charming bungalow with a private garden and modern amenities.',
+            'slug' => Str::slug('100 Maple St Greentown OH'),
+            'price' => 5200,
+            'status' => 'Published',
+            'user_id' => 1,
+            'features' => json_encode(['Lawn', 'Dryer', 'Microwave']),
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+        
+        DB::table('listings')->insert([
+            'title' => 'Stylish Loft in the Heart of the City',
+            'address' => '150 Urban Dr Apt 5C',
+            'city' => 'Metropolis',
+            'state' => 'IL',
+            'type' => 'Loft',
+            'zipcode' => 62960,
+            'bedrooms' => '2',
+            'bathrooms' => '1',
+            'squarefootage' => 1200,
+            'description' => 'A stylish loft located in the vibrant downtown area.',
+            'slug' => Str::slug('150 Urban Dr Apt 5C Metropolis IL'),
+            'price' => 6000,
+            'status' => 'Published',
+            'user_id' => 1,
+            'features' => json_encode(['WiFi', 'Gym', 'Barbeque']),
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+        
+        DB::table('listings')->insert([
+            'title' => 'Elegant Villa with Infinity Pool',
+            'address' => '200 Seaside Ln',
+            'city' => 'Bayview',
+            'state' => 'CA',
+            'type' => 'Villa',
+            'zipcode' => 94005,
+            'bedrooms' => '5',
+            'bathrooms' => '4',
+            'squarefootage' => 3500,
+            'description' => 'An elegant villa featuring an infinity pool and luxurious amenities.',
+            'slug' => Str::slug('200 Seaside Ln Bayview CA'),
+            'price' => 15000,
+            'status' => 'Published',
+            'user_id' => 1,
+            'features' => json_encode(['Swimming Pool', 'Refrigerator', 'Window Coverings']),
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+        
+        DB::table('listings')->insert([
+            'title' => 'Cozy Cabin in the Woods',
+            'address' => '300 Forest Rd',
+            'city' => 'Woodland',
+            'state' => 'WA',
+            'type' => 'Cabin',
+            'zipcode' => 98674,
+            'bedrooms' => '2',
+            'bathrooms' => '1',
+            'squarefootage' => 950,
+            'description' => 'A cozy cabin nestled in the woods, perfect for a peaceful retreat.',
+            'slug' => Str::slug('300 Forest Rd Woodland WA'),
+            'price' => 2800,
+            'status' => 'Published',
+            'user_id' => 1,
+            'features' => json_encode(['Laundry', 'Microwave', 'Sauna']),
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+        
+        DB::table('listings')->insert([
+            'title' => 'Modern Townhouse with Rooftop Deck',
+            'address' => '400 Sunset Blvd Apt 1A',
+            'city' => 'Sunset City',
+            'state' => 'CA',
+            'type' => 'Townhouse',
+            'zipcode' => 90210,
+            'bedrooms' => '3',
+            'bathrooms' => '2',
+            'squarefootage' => 2200,
+            'description' => 'A modern townhouse with a rooftop deck offering stunning views.',
+            'slug' => Str::slug('400 Sunset Blvd Apt 1A Sunset City CA'),
+            'price' => 7000,
+            'status' => 'Published',
+            'user_id' => 1,
+            'features' => json_encode(['Barbeque', 'Air Conditioning', 'WiFi']),
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+        
+        DB::table('listings')->insert([
+            'title' => 'Spacious Ranch with Open Floor Plan',
+            'address' => '500 Ranch Rd',
+            'city' => 'Countryside',
+            'state' => 'TX',
+            'type' => 'Ranch',
+            'zipcode' => 75001,
+            'bedrooms' => '4',
+            'bathrooms' => '3',
+            'squarefootage' => 2800,
+            'description' => 'A spacious ranch with an open floor plan and modern finishes.',
+            'slug' => Str::slug('500 Ranch Rd Countryside TX'),
+            'price' => 4800,
+            'status' => 'Published',
+            'user_id' => 1,
+            'features' => json_encode(['Outdoor Shower', 'Refrigerator', 'Washer']),
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+        
+        DB::table('listings')->insert([
+            'title' => 'Beachfront Condo with Stunning Views',
+            'address' => '600 Beachfront Dr Apt 2B',
+            'city' => 'Seaside',
+            'state' => 'FL',
+            'type' => 'Condo',
+            'zipcode' => 32459,
+            'bedrooms' => '2',
+            'bathrooms' => '2',
+            'squarefootage' => 1300,
+            'description' => 'A beachfront condo offering stunning views and direct beach access.',
+            'slug' => Str::slug('600 Beachfront Dr Apt 2B Seaside FL'),
+            'price' => 8200,
+            'status' => 'Published',
+            'user_id' => 1,
+            'features' => json_encode(['Swimming Pool', 'TV Cable', 'Window Coverings']),
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+        
+        DB::table('listings')->insert([
+            'title' => 'Historic Brownstone with Original Features',
+            'address' => '700 Heritage Ln',
+            'city' => 'Oldtown',
+            'state' => 'NY',
+            'type' => 'Brownstone',
+            'zipcode' => 10002,
+            'bedrooms' => '4',
+            'bathrooms' => '3',
+            'squarefootage' => 2400,
+            'description' => 'A historic brownstone with original features and modern updates.',
+            'slug' => Str::slug('700 Heritage Ln Oldtown NY'),
+            'price' => 9200,
+            'status' => 'Published',
+            'user_id' => 1,
+            'features' => json_encode(['Laundry', 'Gym', 'Air Conditioning']),
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+        
+        DB::table('listings')->insert([
+            'title' => 'Rustic Farmhouse with Expansive Land',
+            'address' => '800 Country Ln',
+            'city' => 'Ruralville',
+            'state' => 'IA',
+            'type' => 'Farmhouse',
+            'zipcode' => 50322,
+            'bedrooms' => '5',
+            'bathrooms' => '3',
+            'squarefootage' => 3000,
+            'description' => 'A rustic farmhouse with expansive land and modern comforts.',
+            'slug' => Str::slug('800 Country Ln Ruralville IA'),
+            'price' => 6500,
+            'status' => 'Published',
+            'user_id' => 1,
+            'features' => json_encode(['Lawn', 'Swimming Pool', 'Sauna']),
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+        
+        DB::table('listings')->insert([
+            'title' => 'Contemporary Studio with City Views',
+            'address' => '900 Skyline Dr Apt 18F',
+            'city' => 'Uptown',
+            'state' => 'CA',
+            'type' => 'Studio',
+            'zipcode' => 90012,
+            'bedrooms' => '1',
+            'bathrooms' => '1',
+            'squarefootage' => 700,
+            'description' => 'A contemporary studio apartment with stunning city views.',
+            'slug' => Str::slug('900 Skyline Dr Apt 18F Uptown CA'),
+            'price' => 4200,
+            'status' => 'Published',
+            'user_id' => 1,
+            'features' => json_encode(['WiFi', 'Microwave', 'TV Cable']),
             'updated_at' => Carbon::now(),
             'created_at' => Carbon::now()
         ]);

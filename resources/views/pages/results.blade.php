@@ -623,22 +623,48 @@
 						<div class="col-lg-12 mt20">
 							<div class="mbp_pagination">
 								<ul class="page_navigation">
-								    <li class="page-item disabled">
-								    	<a class="page-link" href="#" tabindex="-1" aria-disabled="true"> <span class="flaticon-left-arrow"></span> Prev</a>
-								    </li>
-								    <li class="page-item"><a class="page-link" href="#">1</a></li>
-								    <li class="page-item active" aria-current="page">
-								    	<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-								    </li>
-								    <li class="page-item"><a class="page-link" href="#">3</a></li>
-								    <li class="page-item"><a class="page-link" href="#">...</a></li>
-								    <li class="page-item"><a class="page-link" href="#">29</a></li>
-								    <li class="page-item">
-								    	<a class="page-link" href="#"><span class="flaticon-right-arrow"></span></a>
-								    </li>
+									<!-- Previous Page Link -->
+									@if ($listings->onFirstPage())
+										<li class="page-item disabled">
+											<a class="page-link" href="#" tabindex="-1" aria-disabled="true"> 
+												<span class="flaticon-left-arrow"></span> Prev
+											</a>
+										</li>
+									@else
+										<li class="page-item">
+											<a class="page-link" href="{{ $listings->previousPageUrl() }}" tabindex="-1" aria-disabled="true"> 
+												<span class="flaticon-left-arrow"></span> Prev
+											</a>
+										</li>
+									@endif
+				
+									<!-- Pagination Elements -->
+									@foreach ($paginationUrls as $page => $url)
+										@if ($page == $listings->currentPage())
+											<li class="page-item active" aria-current="page">
+												<a class="page-link" href="{{ $url }}">{{ $page }} <span class="sr-only">(current)</span></a>
+											</li>
+										@else
+											<li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+										@endif
+									@endforeach
+				
+									<!-- Next Page Link -->
+									@if ($listings->hasMorePages())
+										<li class="page-item">
+											<a class="page-link" href="{{ $listings->nextPageUrl() }}">
+												<span class="flaticon-right-arrow"></span>
+											</a>
+										</li>
+									@else
+										<li class="page-item disabled">
+											<a class="page-link" href="#"><span class="flaticon-right-arrow"></span></a>
+										</li>
+									@endif
 								</ul>
 							</div>
 						</div>
+						
 					</div>
 				</div>
 			</div>

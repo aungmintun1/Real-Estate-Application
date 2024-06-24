@@ -7,6 +7,7 @@
 <meta name="keywords" content="advanced search custom, agency, agent, business, clean, corporate, directory, google maps, homes, listing, membership packages, property, real estate, real estate agent, realestate agency, realtor">
 <meta name="description" content="FindHouse - Real Estate HTML Template">
 <meta name="CreativeLayers" content="ATFN">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- css file -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
@@ -19,7 +20,7 @@
 <link href="/images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
 <link href="/images/favicon.ico" sizes="128x128" rel="shortcut icon" />
     
-@vite(['resources/css/app.css'])
+@vite(['resources/css/app.css' ,'resources/js/app.js'])
 </head>
 <body>
 <div class="wrapper">
@@ -128,7 +129,7 @@
 	   		<li class="title"><span>Manage Listings</span></li>
 
 	      	<li class="treeview"><a href="/listings"><i class="flaticon-home"></i> <span>My Properties</span></a></li>
-	      	<li><a href="/favorites"><i class="flaticon-heart"></i> <span> My Favorites</span></a></li>
+	      	<li><a href="/users/favorites"><i class="flaticon-heart"></i> <span> My Favorites</span></a></li>
 	      	
 	   		<li class="title"><span>Manage Account</span></li>
 		    <li><a href="/users/{{$user->id}}/edit"><i class="flaticon-user"></i> <span>My Profile</span></a></li>
@@ -162,7 +163,7 @@
 									<ul id="myDropdown" class="dropdown-content">
 										<li><a href="/users/dashboard"><span class="flaticon-layers"></span> Dashboard</a></li>
 										<li><a href="/listings"><span class="flaticon-home"></span> My Properties</a></li>
-										<li><a href="/favorites"><span class="flaticon-heart"></span> My Favorites</a></li>
+										<li><a href="/users/favorites"><span class="flaticon-heart"></span> My Favorites</a></li>
 
 										@if($role=='Admin')<li><a href="page-my-savesearch.html"><span class="flaticon-magnifying-glass"></span>All Users</a></li> @endif
 										<li><a href="page-my-review.html"><span class="flaticon-chat"></span> My Reviews</a></li>
@@ -178,6 +179,8 @@
     <a class="scrollToHome" href="#"><i class="flaticon-arrows"></i></a>
 </div>
 <!-- Wrapper End -->
+<script src="/js/imageDelete.js"></script>
+
 <script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="/js/jquery-migrate-3.0.0.min.js"></script>
 <script type="text/javascript" src="/js/popper.min.js"></script>

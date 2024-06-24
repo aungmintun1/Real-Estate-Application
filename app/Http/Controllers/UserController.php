@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Listing;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -68,7 +69,22 @@ class UserController extends Controller
 
     public function dashboard()
     {
-        return view('pages.dashboard');
+        $user = Auth::user();
+      
+        if(!Auth::check()){
+            return redirect('/users/login')->send();
+        }
+
+        $role = $user->roles[0]->title;
+        $listings = Listing::all()->count();
+        $favorites = $user->savedListings->count();
+
+        return view('pages.dashboard',[
+            'listings'=>$listings,
+            'favorites'=>$favorites,
+            'user'=>$user,
+            'role'=>$role
+        ]);
     
     }
 

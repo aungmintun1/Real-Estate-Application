@@ -11,7 +11,7 @@
 							<div class="ff_one">
 								<div class="icon"><span class="flaticon-home"></span></div>
 								<div class="detais">
-									<div class="timer">37</div>
+									<div class="timer">{{$listings}}</div>
 									<p>All Properties</p>
 								</div>
 							</div>
@@ -38,7 +38,7 @@
 							<div class="ff_one style4">
 								<div class="icon"><span class="flaticon-heart"></span></div>
 								<div class="detais">
-									<div class="timer">18</div>
+									<div class="timer">{{$favorites}}</div>
 									<p>Total Favorites</p>
 								</div>
 							</div>

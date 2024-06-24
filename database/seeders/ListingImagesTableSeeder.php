@@ -13,7 +13,7 @@ class ListingImagesTableSeeder extends Seeder
      */
     public function run(): void
     {
-            for ($i = 1; $i <= 11; $i++) {
+            for ($i = 1; $i <= 25; $i++) {
             DB::table('listing_images')->insert([
                 [
                     'image' => 'home1.jpg',

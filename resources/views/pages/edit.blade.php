@@ -333,13 +333,10 @@
 										<li class="list-inline-item">
 											<div class="portfolio_item">
 												<img class="img-fluid" src="/uploads/{{$image->image}}" alt="fp1.jpg">
-												<div class="edu_stats_list" data-toggle="tooltip" data-placement="top" title="Delete" data-original-title="Delete">
-												 <form method="POST" action="/listings/{{$image->id}}">
-													@csrf
-													@method('DELETE')
-												   <a href="/listings/{{$image->id}}" onclick="event.preventDefault(); this.closest('form').submit();"><span class="flaticon-garbage"></span></a>
-												
-												  </form></div>
+												<div class="edu_stats_list">
+												<a href="#" onclick="event.preventDefault(); imageDelete({{ $image->id }}, this);"><span class="flaticon-garbage"></span></a>
+												</div>
+											
 												
 											</div>
 										</li>
@@ -365,5 +362,26 @@
 			</div>
 		</div>
 	</section>
+{{-- 
+	<script>
+        function imageDelete(imageId, element) {
+            fetch(`/listings/image/${imageId}`, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id: imageId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'deleted') {
+					element.closest('li').remove();
+                }
+                // Optionally handle other statuses or errors
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script> --}}
 
     @endsection

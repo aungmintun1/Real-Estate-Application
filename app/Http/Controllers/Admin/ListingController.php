@@ -95,8 +95,6 @@ class ListingController extends Controller
             }
         }
 
-
-
         return redirect('/listings');
     }
 
@@ -183,9 +181,7 @@ class ListingController extends Controller
             }
         }
 
-        
-
- 
+    
         return redirect('/listings');
     }
 
@@ -200,17 +196,17 @@ class ListingController extends Controller
     
     }
 
+   
     public function destroyImage($id)
     {
         $image=ListingImage::find($id);
-        $listing_id = $image->listing_id;
 
         $image->delete();
 
-        return redirect('/listings/' . $listing_id . '/edit');
-    
-    }
+        $status = 'deleted';
+        return response()->json(['status' => $status]);
 
+    }
     public function search(Request $request)
     {
         // Validate the inputs
@@ -271,11 +267,15 @@ class ListingController extends Controller
         }
 
         // Execute the query and get the results
-        $realEstateListings = $query->orderBy('price', 'asc')->get();
+        $realEstateListings = $query->orderBy('price', 'asc')->paginate(6);
+        $realEstateListings->appends($request->all());
+    
+        $paginationUrls = $realEstateListings->getUrlRange(1, $realEstateListings->lastPage());
 
         // Return the search results view with the real estate listings
         return view('/pages/results',[
             'listings'=>$realEstateListings,
+            'paginationUrls'=>$paginationUrls,
         ]);
     }
 

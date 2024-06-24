@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
 
-        Facades\View::composer(['pages.dashboard', 'pages.favorites'], function (View $view) {
+        Facades\View::composer(['pages.myListings','pages.favorites','pages.edit','pages.create'], function (View $view) {
             $user = Auth::user();
 
             if(!Auth::check()){

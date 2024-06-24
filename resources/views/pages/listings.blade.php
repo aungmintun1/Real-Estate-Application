@@ -336,6 +336,7 @@
  @foreach ($listings as $listing )
      
  <div class="col-md-6 col-lg-4">
+	<a href="/listings/{{$listing->id}}">
     <div class="feat_property home7 style4">
         <div class="thumb">
             <div class="fp_single_item_slider">
@@ -360,12 +361,32 @@
             <div class="thmb_cntnt style3">
                 <ul class="icon mb0">
                     <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+					@if (Route::has('login'))
+				    @auth
+					 @if ($user->savedListings->contains($listing->id))
+					  <li class="favorite list-inline-item "><a href="#"><span class="flaticon-heart"></span></a></li>
+
+					  @else
+					  <li class="list-inline-item">
+					  <form  method="POST" action="/favorites/{{$listing->id}}">
+						@csrf
+					   {{-- <a href="/favorites/{{$listing->id}}" onclick="event.preventDefault(); this.closest('form').submit();"><span class="flaticon-heart"></span></a> --}}
+					   <a href="#" onclick="event.preventDefault(); toggleFavorite({{ $listing->id }}, this);"><span class="flaticon-heart"></span></a>
+					
+					  </form>
+					  </li>
+					 @endif
+					
+					 @else
+					 <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span> </a></li>
+					@endauth
+					@endif>
                 </ul>
                 <a class="fp_price" href="#">${{$listing->price}}<small>/mo</small></a>
             </div>
         </div>
         <div class="details">
+			
             <div class="tc_content">
                 <p class="text-thm">{{$listing->type}}</p>
                 <h4> {{$listing->title}}</h4>
@@ -386,384 +407,17 @@
             </div>
         </div>
     </div>
+</a>
 </div>
 @endforeach
 
-
-						<div class="col-md-6 col-lg-4">
-							<div class="feat_property home7 style4">
-								<div class="thumb">
-									<div class="fp_single_item_slider">
-										<div class="item">
-											<img class="img-whp" src="/images/property/fp2.jpg" alt="fp2.jpg">
-										</div>
-										<div class="item">
-											<img class="img-whp" src="/images/property/fp3.jpg" alt="fp3.jpg">
-										</div>
-									</div>
-									<div class="thmb_cntnt style2">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">For Rent</a></li>
-											<li class="list-inline-item dn"></li>
-										</ul>
-									</div>
-									<div class="thmb_cntnt style3">
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">$13,000<small>/mo</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">Villa</p>
-										<h4>Gorgeous Villa Bay View</h4>
-										<p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-										<ul class="prop_details mb0">
-											<li class="list-inline-item"><a class="text-thm3" href="#">Beds: 4</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Baths: 2</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Sq Ft: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="/images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-										</ul>
-										<div class="fp_pdate float-right">4 years ago</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="feat_property home7 style4">
-								<div class="thumb">
-									<div class="fp_single_item_slider">
-										<div class="item">
-											<img class="img-whp" src="/images/property/fp3.jpg" alt="fp3.jpg">
-										</div>
-										<div class="item">
-											<img class="img-whp" src="/images/property/fp4.jpg" alt="fp4.jpg">
-										</div>
-									</div>
-									<div class="thmb_cntnt style2">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">For Sale</a></li>
-											<li class="list-inline-item dn"></li>
-										</ul>
-									</div>
-									<div class="thmb_cntnt style3">
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">$13,000<small>/mo</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">Single Family Home</p>
-										<h4>Luxury Family Home</h4>
-										<p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-										<ul class="prop_details mb0">
-											<li class="list-inline-item"><a class="text-thm3" href="#">Beds: 4</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Baths: 2</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Sq Ft: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="/images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-										</ul>
-										<div class="fp_pdate float-right">4 years ago</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="feat_property home7 style4">
-								<div class="thumb">
-									<div class="fp_single_item_slider">
-										<div class="item">
-											<img class="img-whp" src="/images/property/fp4.jpg" alt="fp4.jpg">
-										</div>
-										<div class="item">
-											<img class="img-whp" src="/images/property/fp5.jpg" alt="fp5.jpg">
-										</div>
-									</div>
-									<div class="thmb_cntnt style2">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">For Rent</a></li>
-											<li class="list-inline-item"><a href="#">Featured</a></li>
-										</ul>
-									</div>
-									<div class="thmb_cntnt style3">
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">$13,000<small>/mo</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">Apartment</p>
-										<h4>Luxury Family Home</h4>
-										<p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-										<ul class="prop_details mb0">
-											<li class="list-inline-item"><a class="text-thm3" href="#">Beds: 4</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Baths: 2</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Sq Ft: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="/images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-										</ul>
-										<div class="fp_pdate float-right">4 years ago</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="feat_property home7 style4">
-								<div class="thumb">
-									<div class="fp_single_item_slider">
-										<div class="item">
-											<img class="img-whp" src="/images/property/fp15.jpg" alt="fp15.jpg">
-										</div>
-										<div class="item">
-											<img class="img-whp" src="/images/property/fp16.jpg" alt="fp16.jpg">
-										</div>
-									</div>
-									<div class="thmb_cntnt style2">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">For Rent</a></li>
-											<li class="list-inline-item"><a href="#">Featured</a></li>
-										</ul>
-									</div>
-									<div class="thmb_cntnt style3">
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">$13,000<small>/mo</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">Apartment</p>
-										<h4>Renovated Apartment</h4>
-										<p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-										<ul class="prop_details mb0">
-											<li class="list-inline-item"><a class="text-thm3" href="#">Beds: 4</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Baths: 2</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Sq Ft: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="/images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-										</ul>
-										<div class="fp_pdate float-right">4 years ago</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="feat_property home7 style4">
-								<div class="thumb">
-									<div class="fp_single_item_slider">
-										<div class="item">
-											<img class="img-whp" src="/images/property/fp16.jpg" alt="fp16.jpg">
-										</div>
-										<div class="item">
-											<img class="img-whp" src="/images/property/fp17.jpg" alt="fp17.jpg">
-										</div>
-									</div>
-									<div class="thmb_cntnt style2">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">For Rent</a></li>
-											<li class="list-inline-item dn"></li>
-										</ul>
-									</div>
-									<div class="thmb_cntnt style3">
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">$13,000<small>/mo</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">Villa</p>
-										<h4>Gorgeous Villa Bay View</h4>
-										<p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-										<ul class="prop_details mb0">
-											<li class="list-inline-item"><a class="text-thm3" href="#">Beds: 4</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Baths: 2</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Sq Ft: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="/images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-										</ul>
-										<div class="fp_pdate float-right">4 years ago</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="feat_property home7 style4">
-								<div class="thumb">
-									<div class="fp_single_item_slider">
-										<div class="item">
-											<img class="img-whp" src="/images/property/fp17.jpg" alt="fp17.jpg">
-										</div>
-										<div class="item">
-											<img class="img-whp" src="/images/property/fp18.jpg" alt="fp18.jpg">
-										</div>
-									</div>
-									<div class="thmb_cntnt style2">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">For Sale</a></li>
-											<li class="list-inline-item dn"></li>
-										</ul>
-									</div>
-									<div class="thmb_cntnt style3">
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">$13,000<small>/mo</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">Single Family Home</p>
-										<h4>Luxury Family Home</h4>
-										<p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-										<ul class="prop_details mb0">
-											<li class="list-inline-item"><a class="text-thm3" href="#">Beds: 4</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Baths: 2</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Sq Ft: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="/images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-										</ul>
-										<div class="fp_pdate float-right">4 years ago</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="feat_property home7 style4">
-								<div class="thumb">
-									<div class="fp_single_item_slider">
-										<div class="item">
-											<img class="img-whp" src="/images/property/fp18.jpg" alt="fp18.jpg">
-										</div>
-										<div class="item">
-											<img class="img-whp" src="/images/property/fp19.jpg" alt="fp19.jpg">
-										</div>
-									</div>
-									<div class="thmb_cntnt style2">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">For Rent</a></li>
-											<li class="list-inline-item"><a href="#">Featured</a></li>
-										</ul>
-									</div>
-									<div class="thmb_cntnt style3">
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">$13,000<small>/mo</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">Apartment</p>
-										<h4>Luxury Family Home</h4>
-										<p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-										<ul class="prop_details mb0">
-											<li class="list-inline-item"><a class="text-thm3" href="#">Beds: 4</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Baths: 2</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Sq Ft: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="/images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-										</ul>
-										<div class="fp_pdate float-right">4 years ago</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="feat_property home7 style4">
-								<div class="thumb">
-									<div class="fp_single_item_slider">
-										<div class="item">
-											<img class="img-whp" src="/images/property/fp19.jpg" alt="fp19.jpg">
-										</div>
-										<div class="item">
-											<img class="img-whp" src="/images/property/fp20.jpg" alt="fp20.jpg">
-										</div>
-									</div>
-									<div class="thmb_cntnt style2">
-										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">For Rent</a></li>
-											<li class="list-inline-item dn"></li>
-										</ul>
-									</div>
-									<div class="thmb_cntnt style3">
-										<ul class="icon mb0">
-											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-										</ul>
-										<a class="fp_price" href="#">$13,000<small>/mo</small></a>
-									</div>
-								</div>
-								<div class="details">
-									<div class="tc_content">
-										<p class="text-thm">Apartment</p>
-										<h4>Renovated Apartment</h4>
-										<p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-										<ul class="prop_details mb0">
-											<li class="list-inline-item"><a class="text-thm3" href="#">Beds: 4</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Baths: 2</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Sq Ft: 5280</a></li>
-										</ul>
-									</div>
-									<div class="fp_footer">
-										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="/images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-										</ul>
-										<div class="fp_pdate float-right">4 years ago</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12 mt20">
+						{{-- <div class="col-lg-12 mt20">
 							<div class="mbp_pagination">
 								<ul class="page_navigation">
 								    <li class="page-item disabled">
 								    	<a class="page-link" href="#" tabindex="-1" aria-disabled="true"> <span class="flaticon-left-arrow"></span> Prev</a>
 								    </li>
+
 								    <li class="page-item"><a class="page-link" href="#">1</a></li>
 								    <li class="page-item active" aria-current="page">
 								    	<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
@@ -771,17 +425,63 @@
 								    <li class="page-item"><a class="page-link" href="#">3</a></li>
 								    <li class="page-item"><a class="page-link" href="#">...</a></li>
 								    <li class="page-item"><a class="page-link" href="#">29</a></li>
+
 								    <li class="page-item">
 								    	<a class="page-link" href="#"><span class="flaticon-right-arrow"></span></a>
 								    </li>
 								</ul>
 							</div>
+						</div> --}}
+
+						<div class="col-lg-12 mt20">
+							<div class="mbp_pagination">
+								<ul class="page_navigation">
+									<!-- Previous Page Link -->
+									@if ($listings->onFirstPage())
+										<li class="page-item disabled">
+											<a class="page-link" href="#" tabindex="-1" aria-disabled="true"> 
+												<span class="flaticon-left-arrow"></span> Prev
+											</a>
+										</li>
+									@else
+										<li class="page-item">
+											<a class="page-link" href="{{ $listings->previousPageUrl() }}" tabindex="-1" aria-disabled="true"> 
+												<span class="flaticon-left-arrow"></span> Prev
+											</a>
+										</li>
+									@endif
+				
+									<!-- Pagination Elements -->
+									@foreach ($paginationUrls as $page => $url)
+										@if ($page == $listings->currentPage())
+											<li class="page-item active" aria-current="page">
+												<a class="page-link" href="{{ $url }}">{{ $page }} <span class="sr-only">(current)</span></a>
+											</li>
+										@else
+											<li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+										@endif
+									@endforeach
+				
+									<!-- Next Page Link -->
+									@if ($listings->hasMorePages())
+										<li class="page-item">
+											<a class="page-link" href="{{ $listings->nextPageUrl() }}">
+												<span class="flaticon-right-arrow"></span>
+											</a>
+										</li>
+									@else
+										<li class="page-item disabled">
+											<a class="page-link" href="#"><span class="flaticon-right-arrow"></span></a>
+										</li>
+									@endif
+								</ul>
+							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
 
   @endsection

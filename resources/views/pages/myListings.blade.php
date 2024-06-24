@@ -72,7 +72,7 @@
                             <td>{{$listing->price}}</td>
                             <td>
                                 <ul class="view_edit_delete_list mb0">
-                                    <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Edit"><a href="/listing/{{$listing->id}}/edit"><span class="flaticon-edit"></span></a></li>
+                                    <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Edit"><a href="/listings/{{$listing->id}}/edit"><span class="flaticon-edit"></span></a></li>
 
                                     <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Delete">
                                     <form  method="POST" action="/listings/{{$listing->id}}">

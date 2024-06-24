@@ -7,7 +7,7 @@
 <meta name="keywords" content="advanced search custom, agency, agent, business, clean, corporate, directory, google maps, homes, listing, membership packages, property, real estate, real estate agent, realestate agency, realtor">
 <meta name="description" content="FindHouse - Real Estate HTML Template">
 <meta name="CreativeLayers" content="ATFN">
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- Title -->
 <title>FindHouse - Real Estate HTML Template</title>
 <!-- Favicon -->
@@ -64,7 +64,7 @@
 		            </li>
 		            
 		            <li class="last">
-		                <a href="page-contact.html"><span class="title">Contact</span></a>
+		                <a href="/contact"><span class="title">Contact</span></a>
 		            </li>
 					@if (Route::has('login'))
 					@auth
@@ -366,6 +366,7 @@
 <a class="scrollToHome" href="#"><i class="flaticon-arrows"></i></a>
 </div>
 <!-- Wrapper End -->
+<script src="/js/toggleFavorite.js"></script>
 <script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="/js/jquery-migrate-3.0.0.min.js"></script>
 <script type="text/javascript" src="/js/popper.min.js"></script>

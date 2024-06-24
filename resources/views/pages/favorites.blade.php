@@ -31,20 +31,24 @@
 						<div class="col-lg-12">
 							<div class="my_dashboard_review mb40">
                                 @foreach ($favorites as $listing)
+								
 								<div class="favorite_item_list">
 									<div class="feat_property list favorite_page">
+										
 										<div class="thumb">
+											
 											<img class="img-whp" src="/uploads/{{$listing->images[0]->image}}" alt="fp1.jpg">
+											
 											<div class="thmb_cntnt">
 												<ul class="tag mb0">
 													<li class="list-inline-item dn"></li>
-													<li class="list-inline-item"><a href="#">For Sale</a></li>
+													<li class="list-inline-item"><a href="/listings/{{$listing->id}}">For Sale</a></li>
 												</ul>
 											</div>
 										</div>
 										<div class="details">
 											<div class="tc_content">
-												<h4>Renovated Apartment</h4>
+												<a href="/listings/{{$listing->id}}"><h4>{{$listing->title}}</h4></a>
 												<p><span class="flaticon-placeholder"></span>{{$listing->address}}</p>
 												<a class="fp_price text-thm" href="#">{{$listing->price}}<small>/mo</small></a>
 											</div>
@@ -60,6 +64,7 @@
                                             </li>
 						    			</ul>
 									</div>
+							
                                     @endforeach
 							
 					
@@ -82,7 +87,7 @@
 									</div>
 								</div>
 							</div>
-                      
+        
 						</div>
 					</div>
 					<div class="row mt10">

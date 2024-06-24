@@ -16589,3 +16589,8 @@ button.gm-ui-hover-effect:focus {
   margin-right: 10px;
   font-size: 20px;
 }
+
+.favorite{
+  background-color: #ff5a5f !important;
+  opacity:1 !important;
+}
