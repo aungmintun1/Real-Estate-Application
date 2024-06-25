@@ -125,7 +125,7 @@
 				<div class="col-lg-6 offset-lg-3">
 					<div class="main-title text-center">
 						<h2>Our Team</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p>Our dedicated team of real estate professionals who are committed to helping you find your perfect home.</p>
 					</div>
 				</div>
 			</div>
@@ -135,7 +135,7 @@
 						<div class="item">
 							<div class="team_member">
 								<div class="thumb">
-									<img class="img-fluid" src="images/team/1.jpg" alt="1.jpg">
+									<img class="img-fluid" src="images/team/team1.jpg" alt="1.jpg">
 									<div class="overylay">
 										<ul class="social_icon">
 											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -156,7 +156,7 @@
 						<div class="item">
 							<div class="team_member">
 								<div class="thumb">
-									<img class="img-fluid" src="images/team/2.jpg" alt="2.jpg">
+									<img class="img-fluid" src="images/team/team2.jpg" alt="2.jpg">
 									<div class="overylay">
 										<ul class="social_icon">
 											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -177,7 +177,7 @@
 						<div class="item">
 							<div class="team_member">
 								<div class="thumb">
-									<img class="img-fluid" src="images/team/3.jpg" alt="3.jpg">
+									<img class="img-fluid" src="images/team/team3.jpg" alt="3.jpg">
 									<div class="overylay">
 										<ul class="social_icon">
 											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -198,7 +198,7 @@
 						<div class="item">
 							<div class="team_member">
 								<div class="thumb">
-									<img class="img-fluid" src="images/team/4.jpg" alt="4.jpg">
+									<img class="img-fluid" src="images/team/team4.jpg" alt="4.jpg">
 									<div class="overylay">
 										<ul class="social_icon">
 											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -219,7 +219,7 @@
 						<div class="item">
 							<div class="team_member">
 								<div class="thumb">
-									<img class="img-fluid" src="images/team/1.jpg" alt="1.jpg">
+									<img class="img-fluid" src="images/team/team1.jpg" alt="1.jpg">
 									<div class="overylay">
 										<ul class="social_icon">
 											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -240,7 +240,7 @@
 						<div class="item">
 							<div class="team_member">
 								<div class="thumb">
-									<img class="img-fluid" src="images/team/2.jpg" alt="2.jpg">
+									<img class="img-fluid" src="images/team/team2.jpg" alt="2.jpg">
 									<div class="overylay">
 										<ul class="social_icon">
 											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -261,7 +261,7 @@
 						<div class="item">
 							<div class="team_member">
 								<div class="thumb">
-									<img class="img-fluid" src="images/team/3.jpg" alt="3.jpg">
+									<img class="img-fluid" src="images/team/team3.jpg" alt="3.jpg">
 									<div class="overylay">
 										<ul class="social_icon">
 											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -282,7 +282,7 @@
 						<div class="item">
 							<div class="team_member">
 								<div class="thumb">
-									<img class="img-fluid" src="images/team/4.jpg" alt="4.jpg">
+									<img class="img-fluid" src="images/team/team4.jpg" alt="4.jpg">
 									<div class="overylay">
 										<ul class="social_icon">
 											<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -307,84 +307,68 @@
 	</section>
 
 	<!-- Our Testimonials -->
-	<section class="our-testimonials">
+	<section id="our-testimonials" class="our-testimonial">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 offset-lg-3">
-					<div class="main-title text-center mb20">
-						<h2>Testimonials</h2>
-						<p>Here could be a nice sub title</p>
+					<div class="main-title text-center">
+						<h2 class="color-white">Testimonials</h2>
+						<p class="color-white">Here could be a nice sub title</p>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-6 offset-lg-3">
-					<div class="testimonial_grid_slider style2">
+					<div class="testimonial_grid_slider">
 						<div class="item">
-							<div class="testimonial_grid style2">
+							<div class="testimonial_grid">
 								<div class="thumb">
-									<img src="images/testimonial/1.jpg" alt="1.jpg">
-									<div class="tg_quote"><span class="fa fa-quote-left"></span></div>
+									<img src="images/home/t1.jpg" alt="1.jpg">
 								</div>
 								<div class="details">
 									<h4>Augusta Silva</h4>
 									<p>Sales Manager</p>
-									<p class="mt25">Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
+									<p class="mt25">Working with this real estate team has been an incredible experience. They are knowledgeable, professional, and truly care about their clients' needs.</p>
 								</div>
 							</div>
 						</div>
 						<div class="item">
-							<div class="testimonial_grid style2">
+							<div class="testimonial_grid">
 								<div class="thumb">
-									<img src="images/testimonial/1.jpg" alt="1.jpg">
-									<div class="tg_quote"><span class="fa fa-quote-left"></span></div>
+									<img src="images/home/t2.jpg" alt="1.jpg">
 								</div>
 								<div class="details">
-									<h4>Augusta Silva</h4>
-									<p>Sales Manager</p>
-									<p class="mt25">Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
+									<h4>John Miller</h4>
+									<p>Real Estate Agent</p>
+									<p class="mt25">I've been in the industry for over 10 years, and this is by far the best team I've worked with. They make the process seamless and enjoyable for our clients.</p>
 								</div>
 							</div>
 						</div>
 						<div class="item">
-							<div class="testimonial_grid style2">
+							<div class="testimonial_grid">
 								<div class="thumb">
-									<img src="images/testimonial/1.jpg" alt="1.jpg">
-									<div class="tg_quote"><span class="fa fa-quote-left"></span></div>
+									<img src="images/home/t3.jpg"  alt="1.jpg">
 								</div>
 								<div class="details">
-									<h4>Augusta Silva</h4>
-									<p>Sales Manager</p>
-									<p class="mt25">Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
+									<h4>Riley Smith</h4>
+									<p>Property Consultant</p>
+									<p class="mt25">The attention to detail and level of service provided by this team is unmatched. They go above and beyond to ensure client satisfaction.</p>
 								</div>
 							</div>
 						</div>
 						<div class="item">
-							<div class="testimonial_grid style2">
+							<div class="testimonial_grid">
 								<div class="thumb">
-									<img src="images/testimonial/1.jpg" alt="1.jpg">
-									<div class="tg_quote"><span class="fa fa-quote-left"></span></div>
+									<img src="images/home/t4.jpg" alt="1.jpg">
 								</div>
 								<div class="details">
-									<h4>Augusta Silva</h4>
-									<p>Sales Manager</p>
-									<p class="mt25">Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
+									<h4>Matthew Reeves</h4>
+									<p>Relationship Manager</p>
+									<p class="mt25">From the initial consultation to the final closing, the support and expertise offered by this team made all the difference. Highly recommended!.</p>
 								</div>
 							</div>
 						</div>
-						<div class="item">
-							<div class="testimonial_grid style2">
-								<div class="thumb">
-									<img src="images/testimonial/1.jpg" alt="1.jpg">
-									<div class="tg_quote"><span class="fa fa-quote-left"></span></div>
-								</div>
-								<div class="details">
-									<h4>Augusta Silva</h4>
-									<p>Sales Manager</p>
-									<p class="mt25">Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis.</p>
-								</div>
-							</div>
-						</div>
+					
 					</div>
 				</div>
 			</div>
@@ -405,27 +389,27 @@
 			<div class="row">
 				<div class="col-sm-6 col-md-4 col-lg">
 					<div class="our_partner">
-						<img class="img-fluid" src="images/partners/1.png" alt="1.png">
+						<img class="img-fluid" src="images/partners/p1.png" alt="1.png">
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-4 col-lg">
 					<div class="our_partner">
-						<img class="img-fluid" src="images/partners/2.png" alt="2.png">
+						<img class="img-fluid" src="images/partners/p2.png" alt="2.png">
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-4 col-lg">
 					<div class="our_partner">
-						<img class="img-fluid" src="images/partners/3.png" alt="3.png">
+						<img class="img-fluid" src="images/partners/p3.png" alt="3.png">
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-4 col-lg">
 					<div class="our_partner">
-						<img class="img-fluid" src="images/partners/4.png" alt="4.png">
+						<img class="img-fluid" src="images/partners/p4.png" alt="4.png">
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-4 col-lg">
 					<div class="our_partner">
-						<img class="img-fluid" src="images/partners/5.png" alt="5.png">
+						<img class="img-fluid" src="images/partners/p5.png" alt="5.png">
 					</div>
 				</div>
 			</div>

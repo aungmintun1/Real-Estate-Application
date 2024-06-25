@@ -73,7 +73,25 @@
 						<div class="spss style2 mt10 text-right tal-400">
 							<ul class="mb0">
 								<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+					
+								@if (Route::has('login'))
+								@auth
+								 @if ($user->savedListings->contains($listing->id))
+								  <li class="favorite list-inline-item "><a href="#"><span class="flaticon-heart"></span></a></li>
+			
+								  @else
+								  <li class="list-inline-item">
+								  <form  method="POST" action="/favorites/{{$listing->id}}">
+									@csrf
+								   <a href="#" onclick="event.preventDefault(); toggleFavorite({{ $listing->id }}, this);"><span class="flaticon-heart"></span></a>
+								  </form>
+								  </li>
+								 @endif
+								
+								 @else
+								 <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span> </a></li>
+								@endauth
+								@endif
 								<li class="list-inline-item"><a href="#"><span class="flaticon-share"></span></a></li>
 								<li class="list-inline-item"><a href="#"><span class="flaticon-printer"></span></a></li>
 							</ul>

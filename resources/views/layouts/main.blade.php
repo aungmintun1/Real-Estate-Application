@@ -366,6 +366,7 @@
 <a class="scrollToHome" href="#"><i class="flaticon-arrows"></i></a>
 </div>
 <!-- Wrapper End -->
+<script src="/js/priceDropDown.js"></script>
 <script src="/js/toggleFavorite.js"></script>
 <script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="/js/jquery-migrate-3.0.0.min.js"></script>

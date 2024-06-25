@@ -6023,7 +6023,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   background-color: #1d293e;
 }
 .our-testimonial:before{
-  background-image: url('../../public/images/background/2.jpg');
+ 
   bottom: 0;
   content: "";
   left: 0;
@@ -16563,7 +16563,7 @@ button.gm-ui-hover-effect:focus {
   /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) !important; */
 }
 .image-modal-content {
-  width: 1200px;
+  width: 800px;
   border: none;
   border-radius: 0;
 }
@@ -16593,4 +16593,8 @@ button.gm-ui-hover-effect:focus {
 .favorite{
   background-color: #ff5a5f !important;
   opacity:1 !important;
+}
+
+.hidden{
+  display: none;
 }

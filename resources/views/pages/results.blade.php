@@ -34,8 +34,7 @@
 														<option>Bungalow</option>
 														<option>Condo</option>
 														<option>House</option>
-														<option>Land</option>
-														<option>Single Family</option>
+													
 													</select>
 												</div>
 											</div>
@@ -49,8 +48,7 @@
 														<option>Bungalow</option>
 														<option>Condo</option>
 														<option>House</option>
-														<option>Land</option>
-														<option>Single Family</option>
+													
 													</select>
 												</div>
 											</div>
@@ -142,117 +140,7 @@
 										    	<input type="text" class="form-control" id="exampleInputName3" placeholder="Max Area">
 										    </div>
 										</li>
-										<li>
-										  	<div id="accordion" class="panel-group">
-											    <div class="panel">
-											      	<div class="panel-heading">
-												      	<h4 class="panel-title">
-												        	<a href="#panelBodyRating" class="accordion-toggle link" data-toggle="collapse" data-parent="#accordion"><i class="flaticon-more"></i> Advanced features</a>
-												        </h4>
-											      	</div>
-												    <div id="panelBodyRating" class="panel-collapse collapse">
-												        <div class="panel-body row">
-												      		<div class="col-lg-12">
-												                <ul class="ui_kit_checkbox selectable-list float-left fn-400">
-												                	<li>
-																		<div class="custom-control custom-checkbox">
-																			<input type="checkbox" class="custom-control-input" id="customCheck1">
-																			<label class="custom-control-label" for="customCheck1">Air Conditioning</label>
-																		</div>
-												                	</li>
-												                	<li>
-																		<div class="custom-control custom-checkbox">
-																			<input type="checkbox" class="custom-control-input" id="customCheck4">
-																			<label class="custom-control-label" for="customCheck4">Barbeque</label>
-																		</div>
-												                	</li>
-												                	<li>
-																		<div class="custom-control custom-checkbox">
-																			<input type="checkbox" class="custom-control-input" id="customCheck10">
-																			<label class="custom-control-label" for="customCheck10">Gym</label>
-																		</div>
-												                	</li>
-												                	<li>
-																		<div class="custom-control custom-checkbox">
-																			<input type="checkbox" class="custom-control-input" id="customCheck5">
-																			<label class="custom-control-label" for="customCheck5">Microwave</label>
-																		</div>
-												                	</li>
-												                	<li>
-																		<div class="custom-control custom-checkbox">
-																			<input type="checkbox" class="custom-control-input" id="customCheck6">
-																			<label class="custom-control-label" for="customCheck6">TV Cable</label>
-																		</div>
-												                	</li>
-												                	<li>
-																		<div class="custom-control custom-checkbox">
-																			<input type="checkbox" class="custom-control-input" id="customCheck2">
-																			<label class="custom-control-label" for="customCheck2">Lawn</label>
-																		</div>
-												                	</li>
-												                	<li>
-																		<div class="custom-control custom-checkbox">
-																			<input type="checkbox" class="custom-control-input" id="customCheck11">
-																			<label class="custom-control-label" for="customCheck11">Refrigerator</label>
-																		</div>
-												                	</li>
-												                	<li>
-																		<div class="custom-control custom-checkbox">
-																			<input type="checkbox" class="custom-control-input" id="customCheck3">
-																			<label class="custom-control-label" for="customCheck3">Swimming Pool</label>
-																		</div>
-												                	</li>
-												                </ul>
-												                <ul class="ui_kit_checkbox selectable-list float-right fn-400">
-												                	<li>
-																		<div class="custom-control custom-checkbox">
-																			<input type="checkbox" class="custom-control-input" id="customCheck12">
-																			<label class="custom-control-label" for="customCheck12">WiFi</label>
-																		</div>
-												                	</li>
-												                	<li>
-																		<div class="custom-control custom-checkbox">
-																			<input type="checkbox" class="custom-control-input" id="customCheck14">
-																			<label class="custom-control-label" for="customCheck14">Sauna</label>
-																		</div>
-												                	</li>
-												                	<li>
-																		<div class="custom-control custom-checkbox">
-																			<input type="checkbox" class="custom-control-input" id="customCheck7">
-																			<label class="custom-control-label" for="customCheck7">Dryer</label>
-																		</div>
-												                	</li>
-												                	<li>
-																		<div class="custom-control custom-checkbox">
-																			<input type="checkbox" class="custom-control-input" id="customCheck9">
-																			<label class="custom-control-label" for="customCheck9">Washer</label>
-																		</div>
-												                	</li>
-												                	<li>
-																		<div class="custom-control custom-checkbox">
-																			<input type="checkbox" class="custom-control-input" id="customCheck13">
-																			<label class="custom-control-label" for="customCheck13">Laundry</label>
-																		</div>
-												                	</li>
-												                	<li>
-																		<div class="custom-control custom-checkbox">
-																			<input type="checkbox" class="custom-control-input" id="customCheck8">
-																			<label class="custom-control-label" for="customCheck8">Outdoor Shower</label>
-																		</div>
-												                	</li>
-												                	<li>
-																		<div class="custom-control custom-checkbox">
-																			<input type="checkbox" class="custom-control-input" id="customCheck15">
-																			<label class="custom-control-label" for="customCheck15">Window Coverings</label>
-																		</div>
-												                	</li>
-												                </ul>
-													        </div>
-												        </div>
-												    </div>
-											    </div>
-											</div>
-										</li>
+										
 										<li>
 											<div class="search_option_button">
 											    <button type="submit" class="btn btn-block btn-thm">Search</button>
@@ -269,10 +157,10 @@
 				<div class="col-lg-6">
 					<div class="breadcrumb_content style2 mb0-991">
 						<ol class="breadcrumb">
-						    <li class="breadcrumb-item"><a href="#">Home</a></li>
-						    <li class="breadcrumb-item active text-thm" aria-current="page">Simple Listing – List View</li>
+						    <li class="breadcrumb-item"><a href="/">Home</a></li>
+						    <li class="breadcrumb-item active text-thm" aria-current="page">Results</li>
 						</ol>
-						<h2 class="breadcrumb_title">Simple Listing – List View</h2>
+						<h2 class="breadcrumb_title">Results</h2>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -333,8 +221,7 @@
 														<option>Bungalow</option>
 														<option>Condo</option>
 														<option>House</option>
-														<option>Land</option>
-														<option>Single Family</option>
+													
 													</select>
 												</div>
 											</div>
@@ -408,102 +295,23 @@
 								{{-- form end --}}
 							</div>
 						</div>
-						<div class="terms_condition_widget">
-							<h4 class="title">Featured Properties</h4>
-							<div class="sidebar_feature_property_slider">
-								<div class="item">
-									<div class="feat_property home7">
-										<div class="thumb">
-											<img class="img-whp" src="/images/property/fp1.jpg" alt="fp1.jpg">
-											<div class="thmb_cntnt">
-												<ul class="tag mb0">
-													<li class="list-inline-item"><a href="#">For Rent</a></li>
-													<li class="list-inline-item"><a href="#">Featured</a></li>
-												</ul>
-												<a class="fp_price" href="#">$13,000<small>/mo</small></a>
-												<h4 class="posr color-white">Renovated Apartment</h4>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="feat_property home7">
-										<div class="thumb">
-											<img class="img-whp" src="/images/property/fp2.jpg" alt="fp2.jpg">
-											<div class="thmb_cntnt">
-												<ul class="tag mb0">
-													<li class="list-inline-item"><a href="#">For Rent</a></li>
-													<li class="list-inline-item"><a href="#">Featured</a></li>
-												</ul>
-												<a class="fp_price" href="#">$13,000<small>/mo</small></a>
-												<h4 class="posr color-white">Renovated Apartment</h4>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="feat_property home7">
-										<div class="thumb">
-											<img class="img-whp" src="/images/property/fp3.jpg" alt="fp3.jpg">
-											<div class="thmb_cntnt">
-												<ul class="tag mb0">
-													<li class="list-inline-item"><a href="#">For Rent</a></li>
-													<li class="list-inline-item"><a href="#">Featured</a></li>
-												</ul>
-												<a class="fp_price" href="#">$13,000<small>/mo</small></a>
-												<h4 class="posr color-white">Renovated Apartment</h4>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="feat_property home7">
-										<div class="thumb">
-											<img class="img-whp" src="/images/property/fp4.jpg" alt="fp4.jpg">
-											<div class="thmb_cntnt">
-												<ul class="tag mb0">
-													<li class="list-inline-item"><a href="#">For Rent</a></li>
-													<li class="list-inline-item"><a href="#">Featured</a></li>
-												</ul>
-												<a class="fp_price" href="#">$13,000<small>/mo</small></a>
-												<h4 class="posr color-white">Renovated Apartment</h4>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="feat_property home7">
-										<div class="thumb">
-											<img class="img-whp" src="/images/property/fp5.jpg" alt="fp5.jpg">
-											<div class="thmb_cntnt">
-												<ul class="tag mb0">
-													<li class="list-inline-item"><a href="#">For Rent</a></li>
-													<li class="list-inline-item"><a href="#">Featured</a></li>
-												</ul>
-												<a class="fp_price" href="#">$13,000<small>/mo</small></a>
-												<h4 class="posr color-white">Renovated Apartment</h4>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+					
 						<div class="terms_condition_widget">
 							<h4 class="title">Categories Property</h4>
 							<div class="widget_list">
 								<ul class="list_details">
-									<li><a href="#"><i class="fa fa-caret-right mr10"></i>Apartment <span class="float-right">6 properties</span></a></li>
-									<li><a href="#"><i class="fa fa-caret-right mr10"></i>Condo <span class="float-right">12 properties</span></a></li>
-									<li><a href="#"><i class="fa fa-caret-right mr10"></i>Family House <span class="float-right">8 properties</span></a></li>
-									<li><a href="#"><i class="fa fa-caret-right mr10"></i>Modern Villa <span class="float-right">26 properties</span></a></li>
-									<li><a href="#"><i class="fa fa-caret-right mr10"></i>Town House <span class="float-right">89 properties</span></a></li>
+									<li><a href="#"><i class="fa fa-caret-right mr10"></i>Apartment </a></li>
+									<li><a href="#"><i class="fa fa-caret-right mr10"></i>Bungalow </a></li>
+									<li><a href="#"><i class="fa fa-caret-right mr10"></i>Condo </a></li>
+									<li><a href="#"><i class="fa fa-caret-right mr10"></i>House </a></li>
+								
 								</ul>
 							</div>
 						</div>
 						<div class="sidebar_feature_listing">
-							<h4 class="title">Recently Viewed</h4>
+							<h4 class="title">Featured</h4>
 							<div class="media">
-								<img class="align-self-start mr-3" src="/images/blog/fls1.jpg" alt="fls1.jpg">
+								<img class="align-self-start mr-3" src="/images/property/views.jpg" alt="fls1.jpg">
 								<div class="media-body">
 							    	<h5 class="mt-0 post_title">Nice Room With View</h5>
 							    	<a href="#">$13,000/<small>/mo</small></a>
@@ -515,7 +323,7 @@
 								</div>
 							</div>
 							<div class="media">
-								<img class="align-self-start mr-3" src="/images/blog/fls2.jpg" alt="fls2.jpg">
+								<img class="align-self-start mr-3" src="/images/property/villas.jpg" alt="fls2.jpg">
 								<div class="media-body">
 							    	<h5 class="mt-0 post_title">Villa called Archangel</h5>
 							    	<a href="#">$13,000<small>/mo</small></a>
@@ -527,7 +335,7 @@
 								</div>
 							</div>
 							<div class="media">
-								<img class="align-self-start mr-3" src="/images/blog/fls3.jpg" alt="fls3.jpg">
+								<img class="align-self-start mr-3" src="/images/property/studios.jpg" alt="fls3.jpg">
 								<div class="media-body">
 							    	<h5 class="mt-0 post_title">Sunset Studio</h5>
 							    	<a href="#">$13,000<small>/mo</small></a>

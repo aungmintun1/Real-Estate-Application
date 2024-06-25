@@ -100,9 +100,13 @@ class ListingController extends Controller
 
     public function show($id){
 
+        $user = Auth::user();
         $listing = Listing::find($id);
 
-        return view('pages/singleListing',['listing'=>$listing]);
+        return view('pages/singleListing',[
+          'listing'=>$listing,
+          'user'=>$user,
+    ]);
 
     }
 

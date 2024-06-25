@@ -16,11 +16,11 @@ class StaticPagesController extends Controller
     public function ListingAll()
     {  
         $user = Auth::user();
-        // return response()->json($user->savedListings);
-
-        $listings = Listing::paginate(6); 
+       
+        $listings = Listing::paginate(9); 
         $paginationUrls = $listings->getUrlRange(1, $listings->lastPage());
         // return response()->json($listings->getUrlRange(1, $listings->lastPage()));
+
 
         return view('pages/listings',[
             'listings'=>$listings,
