@@ -23,8 +23,7 @@
 							<div class="tab-content home1_adsrchfrm" id="pills-tabContent">
 								<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 									<div class="home1-advnc-search">
-									  {{-- desktop search --}}
-									   <form action="/listings/results" method="GET">
+									  <form action="/listings/results" method="GET">
 										<ul class="h1ads_1st_list mb0">
 											<li class="list-inline-item">
 											    <div class="form-group">
@@ -75,7 +74,27 @@
 												<input type="hidden" name="min_price" id="min_price">
 												<input type="hidden" name="max_price" id="max_price">
 											</li>
-										
+
+											<div class="hidden">
+											<li class="list-inline-item">
+												<div class="small_dropdown2">
+												    <div id="prncgs" class="btn dd_btn">
+												    	<span>Price</span>
+												    	<label for="exampleInputEmail2"><span class="fa fa-angle-down"></span></label>
+												    </div>
+												  	<div class="dd_content2">
+													    <div class="pricing_acontent">
+															<!-- <input type="text" class="amount" placeholder="$52,239"> 
+															<input type="text" class="amount2" placeholder="$985,14">
+															<div class="slider-range"></div> -->
+													    	<span id="slider-range-value1"></span>
+															<span id="slider-range-value2"></span>
+														    <div id="slider"></div>
+													    </div>
+												  	</div>
+												</div>
+											</li>
+										</div>
 											
 											<li class="list-inline-item">
 												<div class="search_option_button">
@@ -145,6 +164,8 @@
 			</div>
 		</div>
 	</section>
+
+	
 
 	<!-- Feature Properties -->
 	<section id="feature-property" class="feature-property bgc-f7">
@@ -767,7 +788,7 @@
 						<div class="item">
 							<div class="testimonial_grid">
 								<div class="thumb">
-									<img src="images/home/t1.jpg" alt="1.jpg">
+									<img src="/images/home/t1.jpg" alt="1.jpg">
 								</div>
 								<div class="details">
 									<h4>Augusta Silva</h4>
@@ -779,7 +800,7 @@
 						<div class="item">
 							<div class="testimonial_grid">
 								<div class="thumb">
-									<img src="images/home/t2.jpg" alt="1.jpg">
+									<img src="/images/home/t2.jpg" alt="1.jpg">
 								</div>
 								<div class="details">
 									<h4>John Miller</h4>
@@ -791,7 +812,7 @@
 						<div class="item">
 							<div class="testimonial_grid">
 								<div class="thumb">
-									<img src="images/home/t3.jpg"  alt="1.jpg">
+									<img src="/images/home/t3.jpg"  alt="1.jpg">
 								</div>
 								<div class="details">
 									<h4>Riley Smith</h4>
@@ -803,7 +824,7 @@
 						<div class="item">
 							<div class="testimonial_grid">
 								<div class="thumb">
-									<img src="images/home/t4.jpg" alt="1.jpg">
+									<img src="/images/home/t4.jpg" alt="1.jpg">
 								</div>
 								<div class="details">
 									<h4>Matthew Reeves</h4>
@@ -833,27 +854,27 @@
 			<div class="row">
 				<div class="col-sm-6 col-md-4 col-lg">
 					<div class="our_partner">
-						<img class="img-fluid" src="images/partners/p1.png" alt="1.png">
+						<img class="img-fluid" src="/images/partners/p1.png" alt="1.png">
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-4 col-lg">
 					<div class="our_partner">
-						<img class="img-fluid" src="images/partners/p2.png" alt="2.png">
+						<img class="img-fluid" src="/images/partners/p2.png" alt="2.png">
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-4 col-lg">
 					<div class="our_partner">
-						<img class="img-fluid" src="images/partners/p3.png" alt="3.png">
+						<img class="img-fluid" src="/images/partners/p3.png" alt="3.png">
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-4 col-lg">
 					<div class="our_partner">
-						<img class="img-fluid" src="images/partners/p4.png" alt="4.png">
+						<img class="img-fluid" src="/images/partners/p4.png" alt="4.png">
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-4 col-lg">
 					<div class="our_partner">
-						<img class="img-fluid" src="images/partners/p5.png" alt="5.png">
+						<img class="img-fluid" src="/images/partners/p5.png" alt="5.png">
 					</div>
 				</div>
 			</div>

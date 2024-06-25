@@ -20,7 +20,7 @@
 <link href="/images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
 <link href="/images/favicon.ico" sizes="128x128" rel="shortcut icon" />
     
-@vite(['resources/css/app.css' ,'resources/js/app.js'])
+@vite(['resources/css/app.css'])
 </head>
 <body>
 <div class="wrapper">

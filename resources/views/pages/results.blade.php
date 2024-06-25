@@ -417,8 +417,8 @@
 									</div>
 									<div class="fp_footer">
 										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="/images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">{{$listing->user->name}}</a></li>
+										
+											<li class="list-inline-item"><a href="#">Listed By: {{$listing->user->name}}</a></li>
 										</ul>
 										<div class="fp_pdate float-right">{{$listing->created_at->format('m/d/Y')}}</div>
 									</div>
