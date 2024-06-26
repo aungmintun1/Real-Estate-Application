@@ -7,27 +7,7 @@
 								<p>We are glad to see you again!</p>
 							</div>
 						</div>
-						<div class="col-lg-8 col-xl-8">
-							<div class="candidate_revew_select style2 text-right mb30-991">
-								<ul class="mb0">
-									<li class="list-inline-item">
-										<div class="candidate_revew_search_box course fn-520">
-											<form class="form-inline my-2">
-										    	<input class="form-control mr-sm-2" type="search" placeholder="Search Courses" aria-label="Search">
-										    	<button class="btn my-2 my-sm-0" type="submit"><span class="flaticon-magnifying-glass"></span></button>
-										    </form>
-										</div>
-									</li>
-									<li class="list-inline-item">
-										<select class="selectpicker show-tick">
-											<option>Featured First</option>
-											<option>Recent</option>
-											<option>Old Review</option>
-										</select>
-									</li>
-								</ul>
-							</div>
-						</div>
+				
 						<div class="col-lg-12">
 							<div class="my_dashboard_review mb40">
                                 @foreach ($favorites as $listing)
@@ -42,7 +22,12 @@
 											<div class="thmb_cntnt">
 												<ul class="tag mb0">
 													<li class="list-inline-item dn"></li>
+													<li class="list-inline-item">>For Sale</a></li>
+													@if ($listing->offer=="sale")
 													<li class="list-inline-item"><a href="/listings/{{$listing->id}}">For Sale</a></li>
+													@else
+													<li class="list-inline-item"><a href="/listings/{{$listing->id}}">For Rent</a></li>
+													@endif
 												</ul>
 											</div>
 										</div>
@@ -50,7 +35,11 @@
 											<div class="tc_content">
 												<a href="/listings/{{$listing->id}}"><h4>{{$listing->title}}</h4></a>
 												<p><span class="flaticon-placeholder"></span>{{$listing->address}}</p>
-												<a class="fp_price text-thm" href="#">{{$listing->price}}<small>/mo</small></a>
+												@if ($listing->offer=="sale")
+												<a class="fp_price text-thm" href="#">${{number_format($listing->price)}}</a>
+												@else
+												<a class="fp_price text-thm" href="#">${{number_format($listing->price)}}<small>/mo</small></a>
+												@endif
 											</div>
 										</div>
 						    			<ul class="view_edit_delete_list mb0 mt35">
@@ -68,23 +57,52 @@
                                     @endforeach
 							
 					
-									<div class="mbp_pagination">
-										<ul class="page_navigation">
-										    <li class="page-item disabled">
-										    	<a class="page-link" href="#" tabindex="-1" aria-disabled="true"> <span class="flaticon-left-arrow"></span> Prev</a>
-										    </li>
-										    <li class="page-item"><a class="page-link" href="#">1</a></li>
-										    <li class="page-item active" aria-current="page">
-										    	<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-										    </li>
-										    <li class="page-item"><a class="page-link" href="#">3</a></li>
-										    <li class="page-item"><a class="page-link" href="#">...</a></li>
-										    <li class="page-item"><a class="page-link" href="#">29</a></li>
-										    <li class="page-item">
-										    	<a class="page-link" href="#"><span class="flaticon-right-arrow"></span></a>
-										    </li>
-										</ul>
+									<div class="col-lg-12 mt20">
+										<div class="mbp_pagination">
+											<ul class="page_navigation">
+												<!-- Previous Page Link -->
+												@if ($favorites->onFirstPage())
+													<li class="page-item disabled">
+														<a class="page-link" href="#" tabindex="-1" aria-disabled="true"> 
+															<span class="flaticon-left-arrow"></span> Prev
+														</a>
+													</li>
+												@else
+													<li class="page-item">
+														<a class="page-link" href="{{ $favorites->previousPageUrl() }}" tabindex="-1" aria-disabled="true"> 
+															<span class="flaticon-left-arrow"></span> Prev
+														</a>
+													</li>
+												@endif
+							
+												<!-- Pagination Elements -->
+												@foreach ($paginationUrls as $page => $url)
+													@if ($page == $favorites->currentPage())
+														<li class="page-item active" aria-current="page">
+															<a class="page-link" href="{{ $url }}">{{ $page }} <span class="sr-only">(current)</span></a>
+														</li>
+													@else
+														<li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+													@endif
+												@endforeach
+							
+												<!-- Next Page Link -->
+												@if ($favorites->hasMorePages())
+													<li class="page-item">
+														<a class="page-link" href="{{ $favorites->nextPageUrl() }}">
+															<span class="flaticon-right-arrow"></span>
+														</a>
+													</li>
+												@else
+													<li class="page-item disabled">
+														<a class="page-link" href="#"><span class="flaticon-right-arrow"></span></a>
+													</li>
+												@endif
+											</ul>
+										</div>
 									</div>
+
+
 								</div>
 							</div>
         
@@ -97,9 +115,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	
 
 @endsection

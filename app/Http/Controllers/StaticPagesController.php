@@ -16,8 +16,8 @@ class StaticPagesController extends Controller
     public function ListingAll()
     {  
         $user = Auth::user();
-       
-        $listings = Listing::paginate(9); 
+
+        $listings = Listing::where('status', 'published')->paginate(9);
         $paginationUrls = $listings->getUrlRange(1, $listings->lastPage());
         // return response()->json($listings->getUrlRange(1, $listings->lastPage()));
 

@@ -6,20 +6,7 @@
         <h2 class="breadcrumb_title">All Users</h2>
     </div>
 </div>
-<div class="col-lg-8 col-xl-8">
-    <div class="candidate_revew_select style2 text-right mb30-991">
-        <ul class="mb0">
-            <li class="list-inline-item">
-                <div class="candidate_revew_search_box course fn-520">
-                    <form class="form-inline my-2">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search Courses" aria-label="Search">
-                        <button class="btn my-2 my-sm-0" type="submit"><span class="flaticon-magnifying-glass"></span></button>
-                    </form>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
+
 <div class="col-lg-12">
     <div class="my_dashboard_review mb40">
         <div class="col-lg-12">
@@ -57,22 +44,64 @@
                                         </li>
                                     </ul>
                                 </td>
-
-                                {{-- <td><a href="/admin/users/{{$user->id}}/edit"><i class="far fa-edit"></i></a></td>
-                                <td>
-                                <form  method="POST" action="/users/{{$user->id}}">
-                                  @csrf
-                                  @method('DELETE')
-                                  <a href="/users/{{$user->id}}" onclick="event.preventDefault(); this.closest('form').submit();"><span class="flaticon-garbage"></span></a>
-                                </form>
-                                </td>   --}}
                           
                             </tr>
 
                             @endforeach
                         </tbody>
                     </table>
+                    <div class="col-lg-12 mt20">
+                        <div class="mbp_pagination">
+                            <ul class="page_navigation">
+                                <!-- Previous Page Link -->
+                                @if ($users->onFirstPage())
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true"> 
+                                            <span class="flaticon-left-arrow"></span> Prev
+                                        </a>
+                                    </li>
+                                @else
+                                    <li class="page-item">
+                                        <a class="page-link" href="{{ $users->previousPageUrl() }}" tabindex="-1" aria-disabled="true"> 
+                                            <span class="flaticon-left-arrow"></span> Prev
+                                        </a>
+                                    </li>
+                                @endif
+                
+                                <!-- Pagination Elements -->
+                                @foreach ($paginationUrls as $page => $url)
+                                    @if ($page == $users->currentPage())
+                                        <li class="page-item active" aria-current="page">
+                                            <a class="page-link" href="{{ $url }}">{{ $page }} <span class="sr-only">(current)</span></a>
+                                        </li>
+                                    @else
+                                        <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+                                    @endif
+                                @endforeach
+                
+                                <!-- Next Page Link -->
+                                @if ($users->hasMorePages())
+                                    <li class="page-item">
+                                        <a class="page-link" href="{{ $users->nextPageUrl() }}">
+                                            <span class="flaticon-right-arrow"></span>
+                                        </a>
+                                    </li>
+                                @else
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#"><span class="flaticon-right-arrow"></span></a>
+                                    </li>
+                                @endif
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
+	<div class="row mt10">
+        <div class="col-lg-12">
+            <div class="copyright-widget text-center">
+                <p>© 2020 Find House. Made with love.</p>
             </div>
         </div>
     </div>

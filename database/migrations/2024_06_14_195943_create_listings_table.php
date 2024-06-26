@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('city');
             $table->string('state');
             $table->string('type');
+            $table->string('offer')->default('sale');
             $table->integer('zipcode')->unsigned();
             $table->string('bedrooms')->default(0);
             $table->string('bathrooms')->default(1);

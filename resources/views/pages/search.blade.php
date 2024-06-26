@@ -12,143 +12,128 @@
 							<div class="sidebar_listing_list style2 mobile_sytle_sidebar mb0">
 								<div class="sidebar_advanced_search_widget">
 									<h4 class="mb25">Advanced Search <a class="filter_closed_btn float-right" href="#"><small>Hide Filter</small> <span class="flaticon-close"></span></a></h4>
-									<ul class="sasw_list style2 mb0">
-										<li class="search_area">
-										    <div class="form-group">
-										    	<input type="text" class="form-control" id="exampleInputName1" placeholder="keyword">
-										    	<label for="exampleInputEmail"><span class="flaticon-magnifying-glass"></span></label>
-										    </div>
-										</li>
-										<li class="search_area">
-										    <div class="form-group">
-										    	<input type="text" class="form-control" id="exampleInputEmail" placeholder="Location">
-										    	<label for="exampleInputEmail"><span class="flaticon-maps-and-flags"></span></label>
-										    </div>
-										</li>
-										<li>
-											<div class="search_option_two">
-												<div class="candidate_revew_select">
-													<select class="selectpicker w100 show-tick">
-														<option>Status</option>
-														<option>Apartment</option>
-														<option>Bungalow</option>
-														<option>Condo</option>
-														<option>House</option>
-														<option>Land</option>
-														<option>Single Family</option>
-													</select>
+									<form action="/listings/results" method="GET">
+										<ul class="sasw_list style2 mb0">
+											<li class="search_area">
+												<div class="form-group">
+													<input name="title" type="text" class="form-control" id="exampleInputName1" placeholder="keyword">
+													<label for="exampleInputEmail"><span class="flaticon-magnifying-glass"></span></label>
 												</div>
-											</div>
-										</li>
-										<li>
-											<div class="search_option_two">
-												<div class="candidate_revew_select">
-													<select class="selectpicker w100 show-tick">
-														<option>Property Type</option>
-														<option>Apartment</option>
-														<option>Bungalow</option>
-														<option>Condo</option>
-														<option>House</option>
-														<option>Land</option>
-														<option>Single Family</option>
-													</select>
+											</li>
+											<li class="search_area">
+												<div class="form-group">
+													<input name="address" type="text" class="form-control" id="exampleInputEmail" placeholder="Location">
+													<label for="exampleInputEmail"><span class="flaticon-maps-and-flags"></span></label>
 												</div>
-											</div>
-										</li>
-										<li>
-											<div class="small_dropdown2">
-											    <div id="prncgs" class="btn dd_btn">
-											    	<span>Price</span>
-											    	<label for="exampleInputEmail2"><span class="fa fa-angle-down"></span></label>
-											    </div>
-											  	<div class="dd_content2">
-												    <div class="pricing_acontent">
-												    	<span id="slider-range-value1"></span>
-														<span class="mt0" id="slider-range-value2"></span>
-													    <div id="slider"></div>
-														<!-- <input type="text" class="amount" placeholder="$52,239"> 
-														<input type="text" class="amount2" placeholder="$985,14">
-														<div class="slider-range"></div> -->
-												    </div>
-											  	</div>
-											</div>
-										</li>
-										<li>
-											<div class="search_option_two">
-												<div class="candidate_revew_select">
-													<select class="selectpicker w100 show-tick">
-														<option>Bathrooms</option>
-														<option>1</option>
-														<option>2</option>
-														<option>3</option>
-														<option>4</option>
-														<option>5</option>
-														<option>6</option>
-													</select>
+											</li>
+											<li>
+												<div class="search_option_two">
+													<div class="candidate_revew_select">
+														<select name="type" class="selectpicker w100 show-tick">
+															<option value="" selected>Property Type</option>
+															<option>Apartment</option>
+															<option>Bungalow</option>
+															<option>Condo</option>
+															<option>House</option>
+														
+														</select>
+													</div>
 												</div>
-											</div>
-										</li>
-										<li>
-											<div class="search_option_two">
-												<div class="candidate_revew_select">
-													<select class="selectpicker w100 show-tick">
-														<option>Bedrooms</option>
-														<option>1</option>
-														<option>2</option>
-														<option>3</option>
-														<option>4</option>
-														<option>5</option>
-														<option>6</option>
-													</select>
+											</li>
+											<li>
+												<div class="search_option_two">
+													<div class="candidate_revew_select">
+														<select name="offer" class="selectpicker w100 show-tick">
+															<option value="sale" selected>For Sale</option>
+															<option value="rent">For Rent</option>
+														</select>
+													</div>
 												</div>
-											</div>
-										</li>
-										<li>
-											<div class="search_option_two">
-												<div class="candidate_revew_select">
-													<select class="selectpicker w100 show-tick">
-														<option>Garages</option>
-														<option>Yes</option>
-														<option>No</option>
-														<option>Others</option>
-													</select>
+											</li>
+											<div class="hidden">
+											<li>
+												<div class="small_dropdown2">
+													<div id="prncgs" class="btn dd_btn">
+														<span>Price</span>
+														<label for="exampleInputEmail2"><span class="fa fa-angle-down"></span></label>
+													</div>
+													  <div class="dd_content2">
+														<div class="pricing_acontent">
+															<span id="slider-range-value1"></span>
+															<span class="mt0" id="slider-range-value2"></span>
+															<div id="slider"></div>
+															<!-- <input type="text" class="amount" placeholder="$52,239"> 
+															<input type="text" class="amount2" placeholder="$985,14">
+															<div class="slider-range"></div> -->
+														</div>
+													  </div>
 												</div>
-											</div>
-										</li>
-										<li>
-											<div class="search_option_two">
-												<div class="candidate_revew_select">
-													<select class="selectpicker w100 show-tick">
-														<option>Year built</option>
-														<option>2013</option>
-														<option>2014</option>
-														<option>2015</option>
-														<option>2016</option>
-														<option>2017</option>
-														<option>2018</option>
-														<option>2019</option>
-														<option>2020</option>
-													</select>
+											</li>
+										   </div>
+											<li>
+												<div class="small_dropdown2">
+													<div id="prncgs2" class="btn dd_btn">
+														<span>Price</span>
+														<label for="exampleInputEmail2"><span class="fa fa-angle-down"></span></label>
+													</div>
+													  <div class="dd_content2">
+														<div class="pricing_acontent">
+															<input name="min_price" type="number" class="amount" placeholder="$52,239"> 
+															<input name="max_price" type="number" class="amount2" placeholder="$98,514">
+															<div class="slider-range"></div>
+														</div>
+													  </div>
 												</div>
-											</div>
-										</li>
-										<li class="min_area style2 list-inline-item">
-										    <div class="form-group">
-										    	<input type="text" class="form-control" id="exampleInputName2" placeholder="Min Area">
-										    </div>
-										</li>
-										<li class="max_area list-inline-item">
-										    <div class="form-group">
-										    	<input type="text" class="form-control" id="exampleInputName3" placeholder="Max Area">
-										    </div>
-										</li>
-									
-										<li>
-											<div class="search_option_button">
-											    <button type="submit" class="btn btn-block btn-thm">Search</button>
-											</div>
-										</li>
-									</ul>
+											</li>
+											<li>
+												<div class="search_option_two">
+													<div class="candidate_revew_select">
+														<select name ="bathrooms" class="selectpicker w100 show-tick">
+															<option  value="" selected >Bathrooms</option>
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+															<option>4</option>
+															<option>5</option>
+															<option>6</option>
+														</select>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="search_option_two">
+													<div class="candidate_revew_select">
+														<select name="bedrooms" class="selectpicker w100 show-tick">
+															<option  value="" selected >Bedrooms</option>
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+															<option>4</option>
+															<option>5</option>
+															<option>6</option>
+														</select>
+													</div>
+												</div>
+											</li>
+										
+											<li class="min_area style2 list-inline-item">
+												<div class="form-group">
+													<input name="min_area" type="text" class="form-control" id="exampleInputName2" placeholder="Min Area">
+												</div>
+											</li>
+											<li class="max_area list-inline-item">
+												<div class="form-group">
+													<input name="max_area" type="text" class="form-control" id="exampleInputName3" placeholder="Max Area">
+												</div>
+											</li>
+											
+											<li>
+												<div class="search_option_button">
+													<button type="submit" class="btn btn-block btn-thm">Search</button>
+												</div>
+											</li>
+										</ul>
+										</form>
 								</div>
 							</div>
 						</div>
@@ -210,6 +195,16 @@
 													<option>Condo</option>
 													<option>House</option>
 										
+												</select>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="search_option_two">
+											<div class="candidate_revew_select">
+												<select name="offer" class="selectpicker w100 show-tick">
+													<option value="sale" selected>For Sale</option>
+													<option value="rent">For Rent</option>
 												</select>
 											</div>
 										</div>

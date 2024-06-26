@@ -26,8 +26,12 @@ class ListingController extends Controller
            return redirect('listings/all');
         }
 
+        $listings = Listing::paginate(5); 
+        $paginationUrls = $listings->getUrlRange(1, $listings->lastPage());
+
         return view('pages/myListings',[
             'listings'=>$listings,
+            'paginationUrls'=>$paginationUrls
         ]);
     }
 
@@ -103,9 +107,14 @@ class ListingController extends Controller
         $user = Auth::user();
         $listing = Listing::find($id);
 
+        $featuresArray = $listing->features;
+        $featureChunks = collect($featuresArray)->chunk(5);
+        //in the case of 5,10, or 15 features, chunk will split them into arrays each containing 5 features
+
         return view('pages/singleListing',[
           'listing'=>$listing,
           'user'=>$user,
+          'featureChunks'=>$featureChunks,
     ]);
 
     }
@@ -218,6 +227,7 @@ class ListingController extends Controller
             'title' => 'nullable|string|max:255',
             'address' => 'nullable|string|max:255',
             'type' => 'nullable|string|max:255',
+            'offer' => 'nullable|string|max:255',
             'min_price' => 'nullable|numeric|min:0',
             'max_price' => 'nullable|numeric|min:0',
             'bathrooms' => 'nullable|integer|min:0',
@@ -228,6 +238,8 @@ class ListingController extends Controller
 
         // Start with the base query
         $query = Listing::query();
+
+        $query->where('status', 'published');
 
         // Apply filters based on the request inputs
         if ($request->filled('title')) {
@@ -244,6 +256,10 @@ class ListingController extends Controller
 
         if ($request->filled('type')) {
             $query->where('type', $request->input('type'));
+        }
+
+        if ($request->filled('offer')) {
+            $query->where('offer', $request->input('offer'));
         }
 
         if ($request->filled('min_price') && $request->filled('max_price')) {
@@ -273,6 +289,7 @@ class ListingController extends Controller
         // Execute the query and get the results
         $realEstateListings = $query->orderBy('price', 'asc')->paginate(6);
         $realEstateListings->appends($request->all());
+        $totalResults= $realEstateListings->total();
     
         $paginationUrls = $realEstateListings->getUrlRange(1, $realEstateListings->lastPage());
 
@@ -280,6 +297,7 @@ class ListingController extends Controller
         return view('/pages/results',[
             'listings'=>$realEstateListings,
             'paginationUrls'=>$paginationUrls,
+            'totalResults'=>$totalResults
         ]);
     }
 

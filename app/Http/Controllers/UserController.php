@@ -18,10 +18,11 @@ class UserController extends Controller
         return view('users.register');
     }
     public function all(){
-        $users=User::all();
-
+        $users=User::paginate(5);
+        $paginationUrls = $users->getUrlRange(1, $users->lastPage());
         return view('users.all',[
             'users'=>$users,
+            'paginationUrls'=>$paginationUrls
         ]);
     }
 
@@ -97,11 +98,17 @@ class UserController extends Controller
     public function favorites()
     {
         $user = Auth::user();
-        // return response()->json($user->savedListings);
-        $favorites=$user->savedListings;
-        
+  
+        // return response()->json($favorites);
+        $favoriteIds = $user->savedListings->pluck('id');
+
+        // Query the Listing models by their IDs and paginate the results
+        $favorites = Listing::whereIn('id', $favoriteIds)->paginate(5);
+
+        $paginationUrls = $favorites->getUrlRange(1, $favorites->lastPage());
         return view('pages.favorites',[
             'favorites'=>$favorites,
+            'paginationUrls'=>$paginationUrls
         ]);
     
     }

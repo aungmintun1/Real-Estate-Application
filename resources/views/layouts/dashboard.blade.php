@@ -130,6 +130,7 @@
 
 	      	<li class="treeview"><a href="/listings"><i class="flaticon-home"></i> <span>My Properties</span></a></li>
 	      	<li><a href="/users/favorites"><i class="flaticon-heart"></i> <span> My Favorites</span></a></li>
+			 @if($role=='Admin')<li><a href="/users/all"><i class="flaticon-user"></i> <span> All Users</span></a></li> @endif
 	      	
 	   		<li class="title"><span>Manage Account</span></li>
 		    <li><a href="/users/{{$user->id}}/edit"><i class="flaticon-user"></i> <span>My Profile</span></a></li>
@@ -165,7 +166,7 @@
 										<li><a href="/listings"><span class="flaticon-home"></span> My Properties</a></li>
 										<li><a href="/users/favorites"><span class="flaticon-heart"></span> My Favorites</a></li>
 
-										@if($role=='Admin')<li><a href="page-my-savesearch.html"><span class="flaticon-magnifying-glass"></span>All Users</a></li> @endif
+										@if($role=='Admin')<li><a href="/users/all"><span class="flaticon-magnifying-glass"></span>All Users</a></li> @endif
 										<li><a href="page-my-review.html"><span class="flaticon-chat"></span> My Reviews</a></li>
 										<li><a href="page-my-profile.html"><span class="flaticon-user"></span> My Profile</a></li>
 										<li class="active"><a href="page-add-new-property.html"><span class="flaticon-filter-results-button"></span> Add New Listing</a></li>

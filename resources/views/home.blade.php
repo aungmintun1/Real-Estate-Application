@@ -17,7 +17,7 @@
 									<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Buy</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Rent</a>
+									<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="true">Rent</a>
 								</li>
 							</ul>
 							<div class="tab-content home1_adsrchfrm" id="pills-tabContent">
@@ -25,6 +25,7 @@
 									<div class="home1-advnc-search">
 									  <form action="/listings/results" method="GET">
 										<ul class="h1ads_1st_list mb0">
+											
 											<li class="list-inline-item">
 											    <div class="form-group">
 											    	<input name="title" type="text" class="form-control" id="exampleInputName1" placeholder="Enter keyword...">
@@ -43,7 +44,9 @@
 														</select>
 													</div>
 												</div>
+												<input type="hidden" name="offer" value="sale">
 											</li>
+										
 											<li class="list-inline-item">
 											    <div class="form-group">
 											    	<input name="address" type="text" class="form-control" id="exampleInputEmail" placeholder="Location">
@@ -107,54 +110,84 @@
 								</div>
 								<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 									<div class="home1-advnc-search">
-										<ul class="h1ads_1st_list mb0">
-											<li class="list-inline-item">
-											    <div class="form-group">
-											    	<input type="text" class="form-control" id="exampleInputName2" placeholder="Enter keyword...">
-											    </div>
-											</li>
-											<li class="list-inline-item">
-												<div class="search_option_two">
-													<div class="candidate_revew_select">
-														<select class="selectpicker w100 show-tick">
-															<option>Property Type</option>
-															<option>Apartment</option>
-															<option>Bungalow</option>
-															<option>Condo</option>
-															<option>House</option>
-													
-														</select>
+										<form action="/listings/results" method="GET">
+											<ul class="h1ads_1st_list mb0">
+											
+												<li class="list-inline-item">
+													<div class="form-group">
+														<input name="title" type="text" class="form-control" id="exampleInputName1" placeholder="Enter keyword...">
 													</div>
-												</div>
-											</li>
-											<li class="list-inline-item">
-											    <div class="form-group">
-											    	<input type="text" class="form-control" id="exampleInputEmail3" placeholder="Location">
-											    	<label for="exampleInputEmail3"><span class="flaticon-maps-and-flags"></span></label>
-											    </div>
-											</li>
-											<li class="list-inline-item">
-												<div class="small_dropdown2">
-												    <div id="prncgs2" class="btn dd_btn">
-												    	<span>Price</span>
-												    	<label for="exampleInputEmail4"><span class="fa fa-angle-down"></span></label>
-												    </div>
-												  	<div class="dd_content2">
-													    <div class="pricing_acontent">
-															<input type="text" class="amount" placeholder="$52,239"> 
-															<input type="text" class="amount2" placeholder="$985,14">
-															<div class="slider-range"></div>
-													    </div>
-												  	</div>
-												</div>
-											</li>
-										
-											<li class="list-inline-item">
-												<div class="search_option_button">
-												    <button type="submit" class="btn btn-thm">Search</button>
-												</div>
-											</li>
-										</ul>
+												</li>
+												<li class="list-inline-item">
+													<div class="search_option_two">
+														<div class="candidate_revew_select">
+															<select name="type" type="text"  class="selectpicker w100 show-tick">
+																<option value="" selected>Property Type</option>
+																<option>Apartment</option>
+																<option>Bungalow</option>
+																<option>Condo</option>
+																<option>House</option>
+															
+															</select>
+														</div>
+														<input type="hidden" name="offer" value="rent">
+													</div>
+												</li>
+												<li class="list-inline-item">
+													<div class="form-group">
+														<input name="address" type="text" class="form-control" id="exampleInputEmail" placeholder="Location">
+														<label for="exampleInputEmail"><span class="flaticon-maps-and-flags"></span></label>
+													</div>
+												</li>
+	
+												<li class="list-inline-item">
+													<div class="search_option_two">
+														<div class="candidate_revew_select">
+															<select class="selectpicker w100 show-tick" onchange="updatePriceRange(this.value)">
+																<option value="">Select Price Range</option>
+																<option value="0-1000">0-$1,000</option>
+																<option value="1000-1500">$1,000-$1,500</option>
+																<option value="1500-2000">$1,500-$2,000</option>
+																<option value="2000-2500">$2,000-$2,500</option>
+																<option value="3000-3500">$3,000-$3,500</option>
+																<option value="3500-4000">$3,500-$4,000</option>
+														
+															</select>
+														</div>
+													</div>
+	
+													<input type="hidden" name="min_price" id="min_price">
+													<input type="hidden" name="max_price" id="max_price">
+												</li>
+	
+												<div class="hidden">
+												<li class="list-inline-item">
+													<div class="small_dropdown2">
+														<div id="prncgs" class="btn dd_btn">
+															<span>Price</span>
+															<label for="exampleInputEmail2"><span class="fa fa-angle-down"></span></label>
+														</div>
+														  <div class="dd_content2">
+															<div class="pricing_acontent">
+																<!-- <input type="text" class="amount" placeholder="$52,239"> 
+																<input type="text" class="amount2" placeholder="$985,14">
+																<div class="slider-range"></div> -->
+																<span id="slider-range-value1"></span>
+																<span id="slider-range-value2"></span>
+																<div id="slider"></div>
+															</div>
+														  </div>
+													</div>
+												</li>
+											</div>
+												
+												<li class="list-inline-item">
+													<div class="search_option_button">
+														<button type="submit" class="btn btn-thm">Search</button>
+													</div>
+												</li>
+											</ul>
+										   </form>
 									</div>
 								</div>
 							</div>

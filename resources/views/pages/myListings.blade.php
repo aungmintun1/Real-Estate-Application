@@ -4,7 +4,8 @@
 <div class="col-lg-4 col-xl-4 mb10">
     <div class="breadcrumb_content style2 mb30-991">
         <h2 class="breadcrumb_title">My Properties</h2>
-        <p>We are glad to see you again!</p>
+        <p>Total Listings: {{$listings->total()}} </p>
+
     </div>
 </div>
 <div class="col-lg-8 col-xl-8">
@@ -54,7 +55,12 @@
                                         <div class="thmb_cntnt">
                                             <ul class="tag mb0">
                                                 <li class="list-inline-item dn"></li>
-                                                {{-- <li class="list-inline-item"><a href="#">For Rent</a></li> --}}
+                                                @if ($listing->offer=="sale")
+                                                <li class="list-inline-item"><a href="#">For Sale</a></li>
+                                                @else
+                                                <li class="list-inline-item"><a href="#">For Rent</a></li>
+                                                @endif
+                                               
                                             </ul>
                                         </div>
                                     </div>
@@ -62,7 +68,12 @@
                                         <div class="tc_content">
                                             <h4>{{$listing->title}}</h4>
                                             <p><span class="flaticon-placeholder"></span>{{$listing->address}}</p>
-                                            <a class="fp_price text-thm" href="#">{{$listing->price}}<small>/mo</small></a>
+                                            @if ($listing->offer=="sale")
+                                            <a class="fp_price text-thm" href="#">${{number_format($listing->price)}}</a>
+                                            @else
+                                            <a class="fp_price text-thm" href="#">${{number_format($listing->price)}}<small>/mo</small></a>
+                                            @endif
+                                          
                                         </div>
                                     </div>
                                 </div>
@@ -87,119 +98,56 @@
                             </td>
                         </tr>
                         @endforeach
-                        {{-- <tr>
-                            <th scope="row">
-                                <div class="feat_property list favorite_page style2">
-                                    <div class="thumb">
-                                        <img class="img-whp" src="images/property/fp2.jpg" alt="fp2.jpg">
-                                        <div class="thmb_cntnt">
-                                            <ul class="tag mb0">
-                                                <li class="list-inline-item dn"></li>
-                                                <li class="list-inline-item"><a href="#">For Rent</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="details">
-                                        <div class="tc_content">
-                                            <h4>Renovated Apartment</h4>
-                                            <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                                            <a class="fp_price text-thm" href="#">$13,000<small>/mo</small></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </th>
-                            <td>30 December, 2020</td>
-                            <td><span class="status_tag badge2">Published</span></td>
-                            <td>2,345</td>
-                            <td>
-                                <ul class="view_edit_delete_list mb0">
-                                    <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Edit"><a href="#"><span class="flaticon-edit"></span></a></li>
-                                    <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Delete"><a href="#"><span class="flaticon-garbage"></span></a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th class="active" scope="row">
-                                <div class="feat_property list favorite_page style2">
-                                    <div class="thumb">
-                                        <img class="img-whp" src="images/property/fp3.jpg" alt="fp3.jpg">
-                                        <div class="thmb_cntnt">
-                                            <ul class="tag mb0">
-                                                <li class="list-inline-item dn"></li>
-                                                <li class="list-inline-item"><a href="#">For Rent</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="details">
-                                        <div class="tc_content">
-                                            <h4>Renovated Apartment</h4>
-                                            <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                                            <a class="fp_price text-thm" href="#">$13,000<small>/mo</small></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </th>
-                            <td>30 December, 2020</td>
-                            <td><span class="status_tag badge3">Processing</span></td>
-                            <td>2,345</td>
-                            <td>
-                                <ul class="view_edit_delete_list mb0">
-                                    <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Edit"><a href="#"><span class="flaticon-edit"></span></a></li>
-                                    <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Delete"><a href="#"><span class="flaticon-garbage"></span></a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <div class="feat_property list favorite_page style2">
-                                    <div class="thumb">
-                                        <img class="img-whp" src="images/property/fp4.jpg" alt="fp4.jpg">
-                                        <div class="thmb_cntnt">
-                                            <ul class="tag mb0">
-                                                <li class="list-inline-item dn"></li>
-                                                <li class="list-inline-item"><a href="#">For Rent</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="details">
-                                        <div class="tc_content">
-                                            <h4>Renovated Apartment</h4>
-                                            <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                                            <a class="fp_price text-thm" href="#">$13,000<small>/mo</small></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </th>
-                            <td>30 December, 2020</td>
-                            <td><span class="status_tag badge">Pending</span></td>
-                            <td>2,345</td>
-                            <td>
-                                <ul class="view_edit_delete_list mb0">
-                                    <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Edit"><a href="#"><span class="flaticon-edit"></span></a></li>
-                                    <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Delete"><a href="#"><span class="flaticon-garbage"></span></a></li>
-                                </ul>
-                            </td>
-                        </tr> --}}
+                
                     </tbody>
                 </table>
             </div>
-            <div class="mbp_pagination">
-                <ul class="page_navigation">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true"> <span class="flaticon-left-arrow"></span> Prev</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active" aria-current="page">
-                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">...</a></li>
-                    <li class="page-item"><a class="page-link" href="#">29</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#"><span class="flaticon-right-arrow"></span></a>
-                    </li>
-                </ul>
+            <div class="col-lg-12 mt20">
+                <div class="mbp_pagination">
+                    <ul class="page_navigation">
+                        <!-- Previous Page Link -->
+                        @if ($listings->onFirstPage())
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true"> 
+                                    <span class="flaticon-left-arrow"></span> Prev
+                                </a>
+                            </li>
+                        @else
+                            <li class="page-item">
+                                <a class="page-link" href="{{ $listings->previousPageUrl() }}" tabindex="-1" aria-disabled="true"> 
+                                    <span class="flaticon-left-arrow"></span> Prev
+                                </a>
+                            </li>
+                        @endif
+    
+                        <!-- Pagination Elements -->
+                        @foreach ($paginationUrls as $page => $url)
+                            @if ($page == $listings->currentPage())
+                                <li class="page-item active" aria-current="page">
+                                    <a class="page-link" href="{{ $url }}">{{ $page }} <span class="sr-only">(current)</span></a>
+                                </li>
+                            @else
+                                <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+                            @endif
+                        @endforeach
+    
+                        <!-- Next Page Link -->
+                        @if ($listings->hasMorePages())
+                            <li class="page-item">
+                                <a class="page-link" href="{{ $listings->nextPageUrl() }}">
+                                    <span class="flaticon-right-arrow"></span>
+                                </a>
+                            </li>
+                        @else
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#"><span class="flaticon-right-arrow"></span></a>
+                            </li>
+                        @endif
+                    </ul>
+                </div>
             </div>
+
+
         </div>
     </div>
 </div>

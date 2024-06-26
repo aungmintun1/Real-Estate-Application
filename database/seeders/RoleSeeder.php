@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB; 
-
+use Faker\Factory as Faker;
 class RoleSeeder extends Seeder
 {
     /**
@@ -40,5 +40,13 @@ class RoleSeeder extends Seeder
             'role_id' => 3,
             'user_id' => 3,
     ]);
+
+    $faker = Faker::create();
+    foreach(range(4,10) as $index){
+        DB::table('role_user')->insert([
+            'role_id' => rand(2,3),
+            'user_id' => $index,
+        ]);
+    }
     }
 }

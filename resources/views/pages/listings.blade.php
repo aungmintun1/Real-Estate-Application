@@ -43,6 +43,17 @@
 											</div>
 										</li>
 
+										<li>
+											<div class="search_option_two">
+												<div class="candidate_revew_select">
+													<select name="offer" class="selectpicker w100 show-tick">
+														<option value="sale" selected>For Sale</option>
+														<option value="rent">For Rent</option>
+													</select>
+												</div>
+											</div>
+										</li>
+
 								
 										<li class="hidden">
 											<div class="small_dropdown2">
@@ -201,8 +212,13 @@
             </div>
             <div class="thmb_cntnt style2">
                 <ul class="tag mb0">
-                    <li class="list-inline-item"><a href="#">For Rent</a></li>
-                    <li class="list-inline-item"><a href="#">Featured</a></li>
+					@if ($listing->offer=='sale')
+					<li class="list-inline-item"><a href="#">For Sale</a></li>
+					@else
+					<li class="list-inline-item"><a href="#">For Rent</a></li>
+					@endif
+               
+                   
                 </ul>
             </div>
             <div class="thmb_cntnt style3">
@@ -229,7 +245,12 @@
 					@endauth
 					@endif>
                 </ul>
-                <a class="fp_price" href="#">${{$listing->price}}<small>/mo</small></a>
+				@if ($listing->offer=='sale')
+				<a class="fp_price" href="#">${{ number_format($listing->price) }}</a>
+				@else
+				<a class="fp_price" href="#">${{number_format($listing->price)}}<small>/mo</small></a>
+				@endif
+              
             </div>
         </div>
         <div class="details">

@@ -35,8 +35,6 @@
 												<option @if ($listing->type == 'Bungalow') selected @endif data-tokens="bungalow">Bungalow</option>
 												<option @if ($listing->type == 'Condo') selected @endif data-tokens="condo">Condo</option>
 												<option @if ($listing->type == 'House') selected @endif data-tokens="house">House</option>
-												<option @if ($listing->type == 'Land') selected @endif data-tokens="land">Land</option>
-												<option @if ($listing->type == 'Single Family') selected @endif data-tokens="single family">Single Family</option>
 											
 											</select>
 										</div>
@@ -185,31 +183,31 @@
 						                <ul class="ui_kit_checkbox selectable-list">
 						                	<li>
 												<div class="custom-control custom-checkbox">
-													<input {{ in_array('Air Conditioning', $listing->features) ? 'checked' : '' }} name="features[]" type="checkbox" class="custom-control-input" id="customCheck1">
+													<input {{ in_array('Air Conditioning', $listing->features) ? 'checked' : '' }} value="Air Conditioning" name="features[]" type="checkbox" class="custom-control-input" id="customCheck1">
 													<label class="custom-control-label" for="customCheck1">Air Conditioning</label>
 												</div>
 						                	</li>
 						                	<li>
 												<div class="custom-control custom-checkbox">
-													<input {{ in_array('Lawn', $listing->features) ? 'checked' : '' }}  name="features[]" type="checkbox" class="custom-control-input" id="customCheck2">
+													<input {{ in_array('Lawn', $listing->features) ? 'checked' : '' }}  value="Lawn" name="features[]" type="checkbox" class="custom-control-input" id="customCheck2">
 													<label class="custom-control-label" for="customCheck2">Lawn</label>
 												</div>
 						                	</li>
 						                	<li>
 												<div class="custom-control custom-checkbox">
-													<input  {{ in_array('Swimming Pool', $listing->features) ? 'checked' : '' }} name="features[]" type="checkbox" class="custom-control-input" id="customCheck3">
+													<input  {{ in_array('Swimming Pool', $listing->features) ? 'checked' : '' }} value="Swimming Pool"  name="features[]" type="checkbox" class="custom-control-input" id="customCheck3">
 													<label class="custom-control-label" for="customCheck3">Swimming Pool</label>
 												</div>
 						                	</li>
 						                	<li>
 												<div class="custom-control custom-checkbox">
-													<input {{ in_array('Barbeque', $listing->features) ? 'checked' : '' }}  name="features[]" type="checkbox" class="custom-control-input" id="customCheck4">
+													<input {{ in_array('Barbeque', $listing->features) ? 'checked' : '' }} value="Barbeque"  name="features[]" type="checkbox" class="custom-control-input" id="customCheck4">
 													<label class="custom-control-label" for="customCheck4">Barbeque</label>
 												</div>
 						                	</li>
 						                	<li>
 												<div class="custom-control custom-checkbox">
-													<input  {{ in_array('Microwave', $listing->features) ? 'checked' : '' }} name="features[]" type="checkbox" class="custom-control-input" id="customCheck5">
+													<input  {{ in_array('Microwave', $listing->features) ? 'checked' : '' }} value="Microwave" name="features[]" type="checkbox" class="custom-control-input" id="customCheck5">
 													<label class="custom-control-label" for="customCheck5">Microwave</label>
 												</div>
 						                	</li>
@@ -219,31 +217,31 @@
 						                <ul class="ui_kit_checkbox selectable-list">
 						                	<li>
 												<div class="custom-control custom-checkbox">
-													<input {{ in_array('TV Cable', $listing->features) ? 'checked' : '' }}  name="features[]" type="checkbox" class="custom-control-input" id="customCheck6">
+													<input {{ in_array('TV Cable', $listing->features) ? 'checked' : '' }} value="TV Cable"  name="features[]" type="checkbox" class="custom-control-input" id="customCheck6">
 													<label class="custom-control-label" for="customCheck6">TV Cable</label>
 												</div>
 						                	</li>
 						                	<li>
 												<div class="custom-control custom-checkbox">
-													<input {{ in_array('Dryer', $listing->features) ? 'checked' : '' }}  name="features[]" type="checkbox" class="custom-control-input" id="customCheck7">
+													<input {{ in_array('Dryer', $listing->features) ? 'checked' : '' }}  value="Dryer" name="features[]" type="checkbox" class="custom-control-input" id="customCheck7">
 													<label class="custom-control-label" for="customCheck7">Dryer</label>
 												</div>
 						                	</li>
 						                	<li>
 												<div class="custom-control custom-checkbox">
-													<input {{ in_array('Outdoor Shower', $listing->features) ? 'checked' : '' }}  name="features[]" type="checkbox" class="custom-control-input" id="customCheck8">
+													<input {{ in_array('Outdoor Shower', $listing->features) ? 'checked' : '' }} value="Outdoor Shower"  name="features[]" type="checkbox" class="custom-control-input" id="customCheck8">
 													<label class="custom-control-label" for="customCheck8">Outdoor Shower</label>
 												</div>
 						                	</li>
 						                	<li>
 												<div class="custom-control custom-checkbox">
-													<input {{ in_array('Washer', $listing->features) ? 'checked' : '' }}  name="features[]" type="checkbox" class="custom-control-input" id="customCheck9">
+													<input {{ in_array('Washer', $listing->features) ? 'checked' : '' }} value="Washer"  name="features[]" type="checkbox" class="custom-control-input" id="customCheck9">
 													<label class="custom-control-label" for="customCheck9">Washer</label>
 												</div>
 						                	</li>
 						                	<li>
 												<div class="custom-control custom-checkbox">
-													<input {{ in_array('Gym', $listing->features) ? 'checked' : '' }}  value="Gym" name="features[]" type="checkbox" class="custom-control-input" id="customCheck10">
+													<input {{ in_array('Gym', $listing->features) ? 'checked' : '' }} value="Gym" name="features[]" type="checkbox" class="custom-control-input" id="customCheck10">
 													<label class="custom-control-label" for="customCheck10">Gym</label>
 												</div>
 						                	</li>
@@ -253,7 +251,7 @@
 						                <ul class="ui_kit_checkbox selectable-list">
 						                	<li>
 												<div class="custom-control custom-checkbox">
-													<input {{ in_array('Refrigerator', $listing->features) ? 'checked' : '' }}  name="features[]" type="checkbox" class="custom-control-input" id="customCheck11">
+													<input {{ in_array('Refrigerator', $listing->features) ? 'checked' : '' }} value="Refrigerator"  name="features[]" type="checkbox" class="custom-control-input" id="customCheck11">
 													<label class="custom-control-label" for="customCheck11">Refrigerator</label>
 												</div>
 						                	</li>
@@ -265,19 +263,19 @@
 						                	</li>
 						                	<li>
 												<div class="custom-control custom-checkbox">
-													<input {{ in_array('WiFi', $listing->features) ? 'checked' : '' }}  name="features[]" type="checkbox" class="custom-control-input" id="customCheck13">
+													<input {{ in_array('WiFi', $listing->features) ? 'checked' : '' }}  value="Laundry" name="features[]" type="checkbox" class="custom-control-input" id="customCheck13">
 													<label class="custom-control-label" for="customCheck13">Laundry</label>
 												</div>
 						                	</li>
 						                	<li>
 												<div class="custom-control custom-checkbox">
-													<input {{ in_array('Sauna', $listing->features) ? 'checked' : '' }}  name="features[]" type="checkbox" class="custom-control-input" id="customCheck14">
+													<input {{ in_array('Sauna', $listing->features) ? 'checked' : '' }} value="Sauna"  name="features[]" type="checkbox" class="custom-control-input" id="customCheck14">
 													<label class="custom-control-label" for="customCheck14">Sauna</label>
 												</div>
 						                	</li>
 						                	<li>
 												<div class="custom-control custom-checkbox">
-													<input {{ in_array('Window Coverings', $listing->features) ? 'checked' : '' }}  name="features[]" type="checkbox" class="custom-control-input" id="customCheck15">
+													<input {{ in_array('Window Coverings', $listing->features) ? 'checked' : '' }} value="Window Coverings"  name="features[]" type="checkbox" class="custom-control-input" id="customCheck15">
 													<label class="custom-control-label" for="customCheck15">Window Coverings</label>
 												</div>
 						                	</li>

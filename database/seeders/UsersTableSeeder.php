@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB; 
+use Faker\Factory as Faker;
 class UsersTableSeeder extends Seeder
 {
     /**
@@ -37,5 +38,16 @@ class UsersTableSeeder extends Seeder
             'updated_at' => Carbon::now(), 
             'created_at' => Carbon::now()
         ]);
+
+        $faker = Faker::create();
+        foreach(range(1,7) as $index){
+            DB::table('users')->insert([
+                'name' => $faker->name,
+                'email' => $faker->email,
+                'password' => Hash::make('password'),
+                'updated_at' => $faker->dateTimeThisMonth('now', 'America/New_York'), 
+                'created_at' => $faker->dateTimeThisMonth('now', 'America/New_York')
+            ]);
+        }
     }
 }
