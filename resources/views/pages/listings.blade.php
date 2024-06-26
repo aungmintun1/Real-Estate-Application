@@ -243,7 +243,7 @@
 					 @else
 					 <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span> </a></li>
 					@endauth
-					@endif>
+					@endif
                 </ul>
 				@if ($listing->offer=='sale')
 				<a class="fp_price" href="#">${{ number_format($listing->price) }}</a>
@@ -331,4 +331,8 @@
 		</div>
 	</section>
 
+  @endsection
+
+  @section('js')
+  <script src="/js/toggleFavorite.js"></script>
   @endsection

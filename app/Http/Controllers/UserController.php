@@ -80,12 +80,21 @@ class UserController extends Controller
         $listings = Listing::all()->count();
         $favorites = $user->savedListings->count();
 
-        return view('pages.dashboard',[
-            'listings'=>$listings,
-            'favorites'=>$favorites,
-            'user'=>$user,
-            'role'=>$role
-        ]);
+         // Determine the view based on the user's role
+    if ($role == 'Admin') {
+        $view = 'pages.dashboard';
+    } elseif ($role == 'Agent') {
+        $view = 'pages.dashboard';
+    } else {
+        $view = 'pages.userDashboard';
+    }
+
+    return view($view, [
+        'listings' => $listings,
+        'favorites' => $favorites,
+        'user' => $user,
+        'role' => $role
+    ]);
     
     }
 

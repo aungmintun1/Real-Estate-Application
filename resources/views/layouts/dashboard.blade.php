@@ -65,7 +65,7 @@
 		            </li>
 		            
 		            <li class="last">
-		                <a href="/about"><span class="title">Contact</span></a>
+		                <a href="/contact"><span class="title">Contact</span></a>
 		            </li>
 					@if (Route::has('login'))
 					@auth
@@ -76,11 +76,11 @@
 					 </form>
 					</li>
 					@else
-					<li class="list-inline-item list_s"><a href="#" class="btn flaticon-user" data-toggle="modal" data-target=".bd-example-modal-lg"> <span class="dn-lg">Login/Register</span></a></li>
+					<li class="list-inline-item list_s"><a href="/users/login" class="btn flaticon-user" data-toggle="modal" data-target=".bd-example-modal-lg"> <span class="dn-lg">Login/Register</span></a></li>
 					@endauth
 					@endif
 	                {{-- <li class="list-inline-item list_s"><a href="#" class="btn flaticon-user" data-toggle="modal" data-target=".bd-example-modal-lg"> <span class="dn-lg">Login/Register</span></a></li> --}}
-	                <li class="list-inline-item add_listing"><a href="page-add-new-property.html"><span class="flaticon-plus"></span><span class="dn-lg"> Create Listing</span></a></li>
+	                <li class="list-inline-item add_listing"><a href="/listings/create"><span class="flaticon-plus"></span><span class="dn-lg"> Create Listing</span></a></li>
 		        </ul>
 		    </nav>
 		</div>
@@ -127,8 +127,9 @@
 	   		<li class="title"><span>Main</span></li>
 	    	<li class="treeview"><a href="/users/dashboard"><i class="flaticon-layers"></i><span> Dashboard</span></a></li>
 	   		<li class="title"><span>Manage Listings</span></li>
-
-	      	<li class="treeview"><a href="/listings"><i class="flaticon-home"></i> <span>My Properties</span></a></li>
+			 
+			@if($role=='Admin' || $role=='Agent')<li class="treeview"><a href="/listings"><i class="flaticon-home"></i> <span>My Properties</span></a></li>@endif
+			@if($role=='Admin' || $role=='Agent')<li class="treeview"><a href="/listings/create"><i class="flaticon-home"></i> <span>Create Listing</span></a></li>@endif
 	      	<li><a href="/users/favorites"><i class="flaticon-heart"></i> <span> My Favorites</span></a></li>
 			 @if($role=='Admin')<li><a href="/users/all"><i class="flaticon-user"></i> <span> All Users</span></a></li> @endif
 	      	
@@ -162,15 +163,18 @@
 								<div class="dropdown">
 									<button onclick="myFunction()" class="dropbtn"><i class="fa fa-bars pr10"></i> Dashboard Navigation</button>
 									<ul id="myDropdown" class="dropdown-content">
-										<li><a href="/users/dashboard"><span class="flaticon-layers"></span> Dashboard</a></li>
+										@if($role=='Admin')<li><a href="/users/dashboard"><span class="flaticon-layers"></span> Dashboard</a></li> @endif
 										<li><a href="/listings"><span class="flaticon-home"></span> My Properties</a></li>
 										<li><a href="/users/favorites"><span class="flaticon-heart"></span> My Favorites</a></li>
 
-										@if($role=='Admin')<li><a href="/users/all"><span class="flaticon-magnifying-glass"></span>All Users</a></li> @endif
-										<li><a href="page-my-review.html"><span class="flaticon-chat"></span> My Reviews</a></li>
-										<li><a href="page-my-profile.html"><span class="flaticon-user"></span> My Profile</a></li>
-										<li class="active"><a href="page-add-new-property.html"><span class="flaticon-filter-results-button"></span> Add New Listing</a></li>
-										<li><a href="page-login.html"><span class="flaticon-logout"></span> Logout</a></li>
+										@if($role=='Admin')<li><a href="/users/all"><span class="flaticon-user"></span>All Users</a></li> @endif
+									
+										<li><a href="/users/{{$user->id}}/edit"><span class="flaticon-user"></span> My Profile</a></li>
+										<li class="active"><a href="/listings/create"><span class="flaticon-filter-results-button"></span> Add New Listing</a></li>
+										<form method="POST" action="{{ route('logout') }}">
+											@csrf
+											<li><a href="/logout" onclick="event.preventDefault(); this.closest('form').submit();" type="button"><span class="flaticon-logout"></span>Logout</a></li>
+										</form>
 									</ul>
 								</div>
 							</div>

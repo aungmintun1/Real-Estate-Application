@@ -16,13 +16,13 @@
 										<ul class="sasw_list style2 mb0">
 											<li class="search_area">
 												<div class="form-group">
-													<input name="title" type="text" class="form-control" id="exampleInputName1" placeholder="keyword">
+													<input name="title" type="text" class="form-control"  placeholder="keyword">
 													<label for="exampleInputEmail"><span class="flaticon-magnifying-glass"></span></label>
 												</div>
 											</li>
 											<li class="search_area">
 												<div class="form-group">
-													<input name="address" type="text" class="form-control" id="exampleInputEmail" placeholder="Location">
+													<input name="address" type="text" class="form-control" placeholder="Location">
 													<label for="exampleInputEmail"><span class="flaticon-maps-and-flags"></span></label>
 												</div>
 											</li>
@@ -70,21 +70,17 @@
 												</div>
 											</li>
 										   </div>
-											<li>
-												<div class="small_dropdown2">
-													<div id="prncgs2" class="btn dd_btn">
-														<span>Price</span>
-														<label for="exampleInputEmail2"><span class="fa fa-angle-down"></span></label>
-													</div>
-													  <div class="dd_content2">
-														<div class="pricing_acontent">
-															<input name="min_price" type="number" class="amount" placeholder="$52,239"> 
-															<input name="max_price" type="number" class="amount2" placeholder="$98,514">
-															<div class="slider-range"></div>
-														</div>
-													  </div>
-												</div>
-											</li>
+										   <li class="min_area style2 list-inline-item">
+											<div class="form-group">
+												<input name="min_price" type="number" class="form-control" placeholder="Min Price">
+											</div>
+										</li>
+										<li class="max_area list-inline-item">
+											<div class="form-group">
+												<input name="max_price" type="number" class="form-control" placeholder="Max Price">
+											</div>
+										</li>
+								
 											<li>
 												<div class="search_option_two">
 													<div class="candidate_revew_select">
@@ -202,14 +198,14 @@
 									<li>
 										<div class="search_option_two">
 											<div class="candidate_revew_select">
-												<select name="offer" class="selectpicker w100 show-tick">
+												<select id="offer" name="offer" class="selectpicker w100 show-tick" onchange="updateOffer(this.value)">
 													<option value="sale" selected>For Sale</option>
 													<option value="rent">For Rent</option>
 												</select>
 											</div>
 										</div>
 									</li>
-									<li>
+									<li id="salePrice">
 										<div class="small_dropdown2">
 										    <div id="prncgs2" class="btn dd_btn">
 										    	<span>Price</span>
@@ -223,6 +219,25 @@
 											    </div>
 										  	</div>
 										</div>
+									</li>
+									<li id="rentPrice">
+										<div class="search_option_two">
+											<div class="candidate_revew_select">
+												<select class="selectpicker w100 show-tick" onchange="updatePriceRange(this.value)">
+													<option value="">Select Price Range</option>
+													<option value="0-1000">0-$1,000</option>
+													<option value="1000-1500">$1,000-$1,500</option>
+													<option value="1500-2000">$1,500-$2,000</option>
+													<option value="2000-2500">$2,000-$2,500</option>
+													<option value="3000-3500">$3,000-$3,500</option>
+													<option value="3500-4000">$3,500-$4,000</option>
+											
+												</select>
+											</div>
+										</div>
+
+										<input type="hidden" name="min_price" id="min_price">
+										<input type="hidden" name="max_price" id="max_price">
 									</li>
 									<li>
 										<div class="search_option_two">
@@ -257,12 +272,12 @@
 						
 									<li class="min_area list-inline-item">
 									    <div class="form-group">
-									    	<input name="min_area" type="number" class="form-control" id="exampleInputName2" placeholder="Min Area">
+									    	<input name="min_area" type="number" class="form-control"  placeholder="Min Area">
 									    </div>
 									</li>
 									<li class="max_area list-inline-item">
 									    <div class="form-group">
-									    	<input name="max_area" type="number" class="form-control" id="exampleInputName3" placeholder="Max Area" value="">
+									    	<input name="max_area" type="number" class="form-control"  placeholder="Max Area" value="">
 									    </div>
 									</li>
 									<li>
@@ -289,20 +304,7 @@
 								
 							</div>
 							<div class="col-sm-12 col-md-8 col-lg-8 col-xl-7">
-								<div class="right_area text-right tac-xsd">
-									<ul>
-										
-										<li class="list-inline-item"><span class="shrtby">Sort by:</span>
-											<select class="selectpicker show-tick">
-												<option>Featured First</option>
-												<option>Featured 2nd</option>
-												<option>Featured 3rd</option>
-												<option>Featured 4th</option>
-												<option>Featured 5th</option>
-											</select>
-										</li>
-									</ul>
-								</div>
+						
 							</div>
 						</div>
 					</div>
@@ -318,3 +320,9 @@
 	
 
 @endsection
+
+@section('js')
+<script src="/js/rentPriceToggle.js"></script>
+<script src="/js/priceDropDown.js"></script>
+@endsection
+

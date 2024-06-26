@@ -366,17 +366,16 @@
 <a class="scrollToHome" href="#"><i class="flaticon-arrows"></i></a>
 </div>
 <!-- Wrapper End -->
-<script src="/js/priceDropDown.js"></script>
-<script src="/js/toggleFavorite.js"></script>
-<script src="/js/toggleOffer.js"></script>
+@yield('js')
+
 <script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="/js/jquery-migrate-3.0.0.min.js"></script>
 <script type="text/javascript" src="/js/popper.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/jquery.mmenu.all.js"></script>
 <script type="text/javascript" src="/js/ace-responsive-menu.js"></script>
-<script type="text/javascript" src="/js/chart.min.js"></script>
-<script type="text/javascript" src="/js/chart-custome.js"></script>
+{{-- <script type="text/javascript" src="/js/chart.min.js"></script>
+<script type="text/javascript" src="/js/chart-custome.js"></script> --}}
 <script type="text/javascript" src="/js/bootstrap-select.min.js"></script>
 <script type="text/javascript" src="/js/isotop.js"></script>
 <script type="text/javascript" src="/js/snackbar.min.js"></script>
@@ -391,8 +390,8 @@
 <script type="text/javascript" src="/js/pricing-slider.js"></script>
 <script type="text/javascript" src="/js/timepicker.js"></script>
 <script type="text/javascript" src="/js/wow.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAz77U5XQuEME6TpftaMdX0bBelQxXRlM&callback=initMap"type="text/javascript"></script>
-<script type="text/javascript" src="/js/googlemaps1.js"></script>
+{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAz77U5XQuEME6TpftaMdX0bBelQxXRlM&callback=initMap"type="text/javascript"></script>
+<script type="text/javascript" src="/js/googlemaps1.js"></script> --}}
 <!-- Custom script for all pages --> 
 <script type="text/javascript" src="/js/script.js"></script>
 </body>

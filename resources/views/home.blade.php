@@ -914,3 +914,7 @@
 		</div>
 	</section>
 @endsection
+
+@section('js')
+<script src="/js/priceDropDown.js"></script>
+@endsection

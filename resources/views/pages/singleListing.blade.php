@@ -588,3 +588,7 @@
 	</section>
 
 @endsection
+
+@section('js')
+<script src="/js/toggleFavorite.js"></script>
+@endsection

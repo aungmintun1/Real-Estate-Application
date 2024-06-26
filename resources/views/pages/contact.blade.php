@@ -103,3 +103,8 @@
 
 
 @endsection
+
+@section('js')
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAz77U5XQuEME6TpftaMdX0bBelQxXRlM&callback=initMap"type="text/javascript"></script>
+<script type="text/javascript" src="/js/googlemaps1.js"></script>
+@endsection

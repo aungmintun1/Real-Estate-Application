@@ -70,21 +70,17 @@
 											</div>
 										</li>
 									   </div>
-										<li>
-											<div class="small_dropdown2">
-												<div id="prncgs2" class="btn dd_btn">
-													<span>Price</span>
-													<label for="exampleInputEmail2"><span class="fa fa-angle-down"></span></label>
-												</div>
-												  <div class="dd_content2">
-													<div class="pricing_acontent">
-														<input name="min_price" type="number" class="amount" placeholder="$52,239"> 
-														<input name="max_price" type="number" class="amount2" placeholder="$98,514">
-														<div class="slider-range"></div>
-													</div>
-												  </div>
-											</div>
-										</li>
+									   <li class="min_area style2 list-inline-item">
+										<div class="form-group">
+											<input name="min_price" type="number" class="form-control" placeholder="Min Price">
+										</div>
+									</li>
+									<li class="max_area list-inline-item">
+										<div class="form-group">
+											<input name="max_price" type="number" class="form-control" placeholder="Max Price">
+										</div>
+									</li>
+							
 										<li>
 											<div class="search_option_two">
 												<div class="candidate_revew_select">
@@ -201,14 +197,14 @@
 										<li>
 											<div class="search_option_two">
 												<div class="candidate_revew_select">
-													<select name="offer" class="selectpicker w100 show-tick">
+													<select name="offer" class="selectpicker w100 show-tick" onchange="updateOffer(this.value)">
 														<option value="sale" selected>For Sale</option>
 														<option value="rent">For Rent</option>
 													</select>
 												</div>
 											</div>
 										</li>
-										<li>
+										<li id="salePrice">
 											<div class="small_dropdown2">
 												<div id="prncgs2" class="btn dd_btn">
 													<span>Price</span>
@@ -216,12 +212,31 @@
 												</div>
 												  <div class="dd_content2">
 													<div class="pricing_acontent">
-														<input name="min_price" type="number" class="amount" placeholder="$1000"> 
-														<input name="max_price" type="number" class="amount2" placeholder="$13000">
+														<input name="min_price" type="number" class="amount" placeholder="$52000"> 
+														<input name="max_price" type="number" class="amount2" placeholder="$98000">
 														<div class="slider-range"></div>
 													</div>
 												  </div>
 											</div>
+										</li>
+										<li id="rentPrice">
+											<div class="search_option_two">
+												<div class="candidate_revew_select">
+													<select class="selectpicker w100 show-tick" onchange="updatePriceRange(this.value)">
+														<option value="">Select Price Range</option>
+														<option value="0-1000">0-$1,000</option>
+														<option value="1000-1500">$1,000-$1,500</option>
+														<option value="1500-2000">$1,500-$2,000</option>
+														<option value="2000-2500">$2,000-$2,500</option>
+														<option value="3000-3500">$3,000-$3,500</option>
+														<option value="3500-4000">$3,500-$4,000</option>
+												
+													</select>
+												</div>
+											</div>
+	
+											<input type="hidden" name="min_price" id="min_price">
+											<input type="hidden" name="max_price" id="max_price">
 										</li>
 										<li>
 											<div class="search_option_two">
@@ -373,7 +388,26 @@
 									<div class="thmb_cntnt">
 										<ul class="icon mb0">
 											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+											@if (Route::has('login'))
+											@auth
+											 @if ($user->savedListings->contains($listing->id))
+											  <li class="favorite list-inline-item "><a href="#"><span class="flaticon-heart"></span></a></li>
+						
+											  @else
+											  <li class="list-inline-item">
+											  <form  method="POST" action="/favorites/{{$listing->id}}">
+												@csrf
+											   {{-- <a href="/favorites/{{$listing->id}}" onclick="event.preventDefault(); this.closest('form').submit();"><span class="flaticon-heart"></span></a> --}}
+											   <a href="#" onclick="event.preventDefault(); toggleFavorite({{ $listing->id }}, this);"><span class="flaticon-heart"></span></a>
+											
+											  </form>
+											  </li>
+											 @endif
+											
+											 @else
+											 <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span> </a></li>
+											@endauth
+											@endif
 										</ul>
 									</div>
 								</div>
@@ -381,10 +415,19 @@
 									<div class="tc_content">
 										<div class="dtls_headr">
 											<ul class="tag">
-												<li class="list-inline-item"><a href="#">For Sale</a></li>
+												
+												@if ($listing->offer=="sale")
+												<li class="list-inline-item"><a href="/listings/{{$listing->id}}">For Sale</a></li>
+												@else
+												<li class="list-inline-item"><a href="/listings/{{$listing->id}}">For Rent</a></li>
+												@endif
 												{{-- <li class="list-inline-item"><a href="#">Featured</a></li> --}}
 											</ul>
-											<a class="fp_price" href="#">{{$listing->price}}<small>/mo</small></a>
+											@if ($listing->offer=="sale")
+											<a class="fp_price" href="#">${{number_format($listing->price)}}</a>
+											@else
+											<a class="fp_price" href="#">${{number_format($listing->price)}}<small>/mo</small></a>
+											@endif
 										</div>
 										<p class="text-thm">{{$listing->type}}</p>
 										<h4>{{$listing->title}}</h4>
@@ -461,4 +504,10 @@
 
 	
 
+@endsection
+
+@section('js')
+<script src="/js/toggleFavorite.js"></script>
+<script src="/js/rentPriceToggle.js"></script>
+<script src="/js/priceDropDown.js"></script>
 @endsection

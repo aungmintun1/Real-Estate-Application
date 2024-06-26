@@ -236,6 +236,8 @@ class ListingController extends Controller
             'max_area' => 'nullable|string|min:0',
         ]);
 
+        $user = Auth::user();
+
         // Start with the base query
         $query = Listing::query();
 
@@ -297,7 +299,8 @@ class ListingController extends Controller
         return view('/pages/results',[
             'listings'=>$realEstateListings,
             'paginationUrls'=>$paginationUrls,
-            'totalResults'=>$totalResults
+            'totalResults'=>$totalResults,
+            'user'=>$user
         ]);
     }
 
