@@ -1,0 +1,105 @@
+{
+  "public/images/background/contact-bg.jpg": {
+    "file": "assets/contact-bg-DojipAQt.jpg",
+    "src": "public/images/background/contact-bg.jpg"
+  },
+  "public/images/background/re-home.jpg": {
+    "file": "assets/re-home-Bx-EwIUL.jpg",
+    "src": "public/images/background/re-home.jpg"
+  },
+  "public/images/preloader.gif": {
+    "file": "assets/preloader-D53JWz2C.gif",
+    "src": "public/images/preloader.gif"
+  },
+  "resources/css/ajax-loader.gif": {
+    "file": "assets/ajax-loader-BcnMEykj.gif",
+    "src": "resources/css/ajax-loader.gif"
+  },
+  "resources/css/animated-overlay.gif": {
+    "file": "assets/animated-overlay-BGenbtmv.gif",
+    "src": "resources/css/animated-overlay.gif"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-c9c-sjR0.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/lightbox/close.png": {
+    "file": "assets/close-DeJujm55.png",
+    "src": "resources/css/lightbox/close.png"
+  },
+  "resources/css/lightbox/loading.gif": {
+    "file": "assets/loading-BY_-FGaJ.gif",
+    "src": "resources/css/lightbox/loading.gif"
+  },
+  "resources/css/lightbox/next.png": {
+    "file": "assets/next-QVcNtdNi.png",
+    "src": "resources/css/lightbox/next.png"
+  },
+  "resources/css/lightbox/prev.png": {
+    "file": "assets/prev-BVHqDsrk.png",
+    "src": "resources/css/lightbox/prev.png"
+  },
+  "resources/fonts/Flaticon.eot": {
+    "file": "assets/Flaticon-BqNF16EA.eot",
+    "src": "resources/fonts/Flaticon.eot"
+  },
+  "resources/fonts/Flaticon.svg": {
+    "file": "assets/Flaticon-BJaJ8-hO.svg",
+    "src": "resources/fonts/Flaticon.svg"
+  },
+  "resources/fonts/Flaticon.ttf": {
+    "file": "assets/Flaticon-DpeBmFoo.ttf",
+    "src": "resources/fonts/Flaticon.ttf"
+  },
+  "resources/fonts/Flaticon.woff": {
+    "file": "assets/Flaticon-DsfyQZbg.woff",
+    "src": "resources/fonts/Flaticon.woff"
+  },
+  "resources/fonts/Flaticon.woff2": {
+    "file": "assets/Flaticon-BE60Pr5z.woff2",
+    "src": "resources/fonts/Flaticon.woff2"
+  },
+  "resources/fonts/fontawesome-webfont.eot": {
+    "file": "assets/fontawesome-webfont-G5YE5S7X.eot",
+    "src": "resources/fonts/fontawesome-webfont.eot"
+  },
+  "resources/fonts/fontawesome-webfont.svg": {
+    "file": "assets/fontawesome-webfont-D13rzr4g.svg",
+    "src": "resources/fonts/fontawesome-webfont.svg"
+  },
+  "resources/fonts/fontawesome-webfont.ttf": {
+    "file": "assets/fontawesome-webfont-CQDK8MU3.ttf",
+    "src": "resources/fonts/fontawesome-webfont.ttf"
+  },
+  "resources/fonts/fontawesome-webfont.woff": {
+    "file": "assets/fontawesome-webfont-CDK5bt4p.woff",
+    "src": "resources/fonts/fontawesome-webfont.woff"
+  },
+  "resources/fonts/fontawesome-webfont.woff2": {
+    "file": "assets/fontawesome-webfont-B-jkhYfk.woff2",
+    "src": "resources/fonts/fontawesome-webfont.woff2"
+  },
+  "resources/fonts/slick.eot": {
+    "file": "assets/slick-Bi9J8BMx.eot",
+    "src": "resources/fonts/slick.eot"
+  },
+  "resources/fonts/slick.svg": {
+    "file": "assets/slick-BlzDm7g2.svg",
+    "src": "resources/fonts/slick.svg"
+  },
+  "resources/fonts/slick.ttf": {
+    "file": "assets/slick-DWzRxEMf.ttf",
+    "src": "resources/fonts/slick.ttf"
+  },
+  "resources/fonts/slick.woff": {
+    "file": "assets/slick-BlUtDIuC.woff",
+    "src": "resources/fonts/slick.woff"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-Bg1aHGgo.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
