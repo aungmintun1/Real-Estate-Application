@@ -71,19 +71,14 @@
 											  	</div>
 											</div>
 										</li>
-										<li>
-											<div class="small_dropdown2">
-												<div id="prncgs2" class="btn dd_btn">
-													<span>Price</span>
-													<label for="exampleInputEmail2"><span class="fa fa-angle-down"></span></label>
-												</div>
-												  <div class="dd_content2 w100">
-													<div class="pricing_acontent">
-														<input name="min_price" type="number" class="amount" placeholder="$52000"> 
-														<input name="max_price" type="number" class="amount2" placeholder="$98000">
-														<div class="slider-range"></div>
-													</div>
-												  </div>
+										<li class="min_area style2 list-inline-item">
+											<div class="form-group">
+												<input name="min_price" type="number" class="form-control" placeholder="Min Price">
+											</div>
+										</li>
+										<li class="max_area list-inline-item">
+											<div class="form-group">
+												<input name="max_price" type="number" class="form-control" placeholder="Max Price">
 											</div>
 										</li>
 										<li>
@@ -263,7 +258,7 @@
                     <li class="list-inline-item"><a class="text-thm3" href="#">Beds: {{$listing->bedrooms}}</a></li>
                     <li class="list-inline-item"><a class="text-thm3" href="#">Bathrooms: {{$listing->bathrooms}}</a></li>
                     <li class="list-inline-item"><a class="text-thm3" href="#">Sq Ft: {{$listing->squarefootage}}</a></li>
-					<p>Features: @foreach ($listing->features as $feature) {{$feature}},			@endforeach</p>
+					
                 </ul>
             </div>
             <div class="fp_footer">
