@@ -15,7 +15,7 @@
 <!-- Responsive stylesheet -->
 <link rel="stylesheet" href="css/responsive.css">
 <!-- Title -->
-<title>FindHouse - Real Estate HTML Template</title>
+<title>Aung FindHouse Dashboard</title>
 <!-- Favicon -->
 <link href="/images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
 <link href="/images/favicon.ico" sizes="128x128" rel="shortcut icon" />
