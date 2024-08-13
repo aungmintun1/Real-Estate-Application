@@ -369,7 +369,7 @@
 										<li class="list-inline-item write_review">Write a Review</li>
 									</ul>
 									<div class="mbp_first media">
-										<img src="/images/testimonial/1.png" class="mr-3" alt="1.png">
+										<img src="/images/team/test1.png" class="mr-3" alt="1.png">
 										<div class="media-body">
 									    	<h4 class="sub_title mt-0">Diana Cooper
 												<div class="sspd_review dif">
@@ -389,7 +389,7 @@
 									</div>
 									<div class="custom_hr"></div>
 									<div class="mbp_first media">
-										<img src="/images/testimonial/2.png" class="mr-3" alt="2.png">
+										<img src="/images/team/test2.png" class="mr-3" alt="2.png">
 										<div class="media-body">
 									    	<h4 class="sub_title mt-0">Ali Tufan
 												<div class="sspd_review dif">

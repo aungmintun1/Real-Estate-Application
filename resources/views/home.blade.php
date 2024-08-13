@@ -269,7 +269,7 @@
 							</a>
 						</div>
 						<div class="item">
-							<a href="page-listing-single-v2.html">
+							<a href="/listings/1">
 								<div class="feat_property">
 									<div class="thumb">
 										<img class="img-whp" src="images/property/view.jpg" alt="fp2.jpg">

@@ -16531,3 +16531,8 @@ button.gm-ui-hover-effect:focus {
 [disabled].noUi-origin,[disabled] .noUi-handle {
   cursor: not-allowed;
 }
+.listing-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}

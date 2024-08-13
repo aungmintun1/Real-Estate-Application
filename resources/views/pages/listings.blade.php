@@ -192,7 +192,8 @@
 	<a href="/listings/{{$listing->id}}">
     <div class="feat_property home7 style4">
         <div class="thumb">
-            <div class="fp_single_item_slider">
+            <div>
+				{{-- class="fp_single_item_slider" --}}
 				@php
 				$sortedimages = $listing->images->sortByDesc('thumbnail_image'); //'yes' is considered higher than 'no'
 				@endphp

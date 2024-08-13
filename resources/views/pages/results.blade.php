@@ -382,8 +382,11 @@
 						
 				
 						<div class="col-lg-12">
+						  
 							<div class="feat_property list">
+								
 								<div class="thumb">
+								 
 									<img class="img-whp" src="/uploads/{{$listing->images[0]->image}}" alt="listing thumbnail">
 									<div class="thmb_cntnt">
 										<ul class="icon mb0">
@@ -410,6 +413,7 @@
 											@endif
 										</ul>
 									</div>
+								
 								</div>
 								<div class="details">
 									<div class="tc_content">
@@ -430,7 +434,7 @@
 											@endif
 										</div>
 										<p class="text-thm">{{$listing->type}}</p>
-										<h4>{{$listing->title}}</h4>
+										<a href="/listings/{{$listing->id}}"><h4>{{$listing->title}}</h4></a>
 										<p><span class="flaticon-placeholder"></span>{{$listing->address}}</p>
 										<ul class="prop_details mb0">
 											<li class="list-inline-item"><a href="#">Beds: {{$listing->bedrooms}}</a></li>
@@ -445,10 +449,12 @@
 										</ul>
 										<div class="fp_pdate float-right">{{$listing->created_at->format('m/d/Y')}}</div>
 									</div>
+								
 								</div>
+							
 							</div>
 						</div>
-
+				      
 						@endforeach
 
 						<div class="col-lg-12 mt20">
